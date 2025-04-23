@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AVAI - Agencia de Inteligencia Artificial</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -15,10 +14,11 @@
       scroll-behavior: smooth;
     }
     body {
-      background: linear-gradient(145deg, #000 70%, #1a0000 100%);
+      background: linear-gradient(145deg, #000 60%, #1a0000);
       color: white;
       font-family: 'Rajdhani', sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     header, section, footer {
       padding: 60px 20px;
@@ -66,6 +66,7 @@
       position: relative;
       background-color: #111;
       transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 10px rgba(255,0,0,0.2);
     }
     .card:hover {
       box-shadow: 0 0 20px red;
@@ -89,9 +90,6 @@
       cursor: pointer;
       border-radius: 5px;
     }
-    .card button:hover {
-      background-color: #cc0000;
-    }
     footer {
       text-align: center;
       font-size: 14px;
@@ -108,17 +106,18 @@
         transform: translateY(0);
       }
     }
-    button.whatsapp {
+    .whatsapp-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background-color: red;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 16px;
+      border-radius: 50px;
       font-weight: bold;
-      border: none;
-      border-radius: 5px;
+      box-shadow: 0 0 10px red;
       cursor: pointer;
-    }
-    button.whatsapp:hover {
-      background-color: #cc0000;
+      z-index: 1000;
     }
   </style>
 </head>
@@ -129,11 +128,11 @@
   <a href="#sobre-nosotros">Sobre Nosotros</a>
   <a href="#soluciones">Soluciones</a>
   <a href="#garantia">Garantía</a>
-  <a href="#contacto">Contacto</a>
+  <a href="#contacto">Agendar llamada</a>
 </nav>
 
 <header id="inicio" class="fade-in">
-  <h1><span style="color:white">AV</span><span>AI</span></h1>
+  <h1><span>AV</span>AI</h1>
   <p>Agencia de Inteligencia Artificial</p>
   <p>Llevamos negocios tradicionales al siguiente nivel con automatización, inteligencia artificial y eficiencia operativa.</p>
 </header>
@@ -184,7 +183,7 @@
         <li>Notificaciones internas del equipo</li>
         <li>Respuestas automáticas a interesados</li>
       </ul>
-      <button class="whatsapp" onclick="window.location.href='https://wa.me/593939975181?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20de%20inteligencia%20artificial'">Agenda una llamada</button>
+      <button onclick="window.location.href='https://wa.me/593939975181?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20IA'">Agenda una llamada</button>
     </div>
     <div class="card">
       <h3>PRO</h3>
@@ -195,7 +194,7 @@
         <li>FAQ, políticas y respuestas automáticas</li>
         <li>Soporte básico al cliente</li>
       </ul>
-      <button class="whatsapp" onclick="window.location.href='https://wa.me/593939975181?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20de%20inteligencia%20artificial'">Agenda una llamada</button>
+      <button onclick="window.location.href='https://wa.me/593939975181?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20IA'">Agenda una llamada</button>
     </div>
     <div class="card">
       <h3>PREMIUM</h3>
@@ -206,7 +205,7 @@
         <li>Integración con CRM completo</li>
         <li>Análisis de datos mensuales</li>
       </ul>
-      <button class="whatsapp" onclick="window.location.href='https://wa.me/593939975181?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20de%20inteligencia%20artificial'">Agenda una llamada</button>
+      <button onclick="window.location.href='https://wa.me/593939975181?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20IA'">Agenda una llamada</button>
     </div>
     <div class="card">
       <h3>PERSONALIZADO</h3>
@@ -216,26 +215,31 @@
         <li>Implementaciones únicas</li>
         <li>Seguimiento directo con Nico</li>
       </ul>
-      <button class="whatsapp" onclick="window.location.href='https://wa.me/593939975181?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20de%20inteligencia%20artificial'">Agenda una llamada</button>
+      <button onclick="window.location.href='https://wa.me/593939975181?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20IA'">Agenda una llamada</button>
     </div>
   </div>
 </section>
 
 <section id="garantia" class="fade-in">
-  <h2><i class="fas fa-shield-alt"></i> Garantía</h2>
+  <h2>Garantía</h2>
   <p>Si en 30 días no ves mejoras reales en tus procesos, automatizaciones o respuestas, te devolvemos tu dinero. Sin excusas.</p>
 </section>
 
 <section id="contacto" class="fade-in">
   <h2>¿Listo para empezar?</h2>
   <p>Agenda una llamada con nosotros y descubre cómo AVAI puede transformar tu empresa.</p>
-  <button class="whatsapp" onclick="window.location.href='https://wa.me/593939975181?text=Hola%2C%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20de%20inteligencia%20artificial'">Escríbenos por WhatsApp</button>
+  <button onclick="window.location.href='https://wa.me/593939975181?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20IA'">Agendar llamada</button>
 </section>
 
 <footer>
   <p>&copy; 2025 AVAI. Todos los derechos reservados.</p>
 </footer>
 
+<div class="whatsapp-fixed" onclick="window.location.href='https://wa.me/593939975181?text=Hola,%20quiero%20más%20información%20sobre%20los%20servicios%20de%20IA'">
+  WhatsApp
+</div>
+
 </body>
 </html>
+
 
