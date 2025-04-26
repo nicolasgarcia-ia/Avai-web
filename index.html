@@ -751,20 +751,6 @@
       window.open("https://wa.me/593939975181?text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20inteligencia%20artificial", "_blank");
     }
 
-    // Navbar efecto al scroll
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      const scrollTop = document.getElementById('scroll-top');
-      
-      if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-        scrollTop.classList.add('active');
-      } else {
-        navbar.classList.remove('scrolled');
-        scrollTop.classList.remove('active');
-      }
-    });
-
     // Scroll to top
     document.getElementById('scroll-top').addEventListener('click', function() {
       window.scrollTo({
