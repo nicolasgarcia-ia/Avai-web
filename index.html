@@ -798,6 +798,50 @@
         }
       });
     });
+    // Aquí iría el código para enviar el formulario a tu correo
+      // En un caso real, esto se conectaría a un backend que procesaría el envío
+      // Por ahora, simularemos una respuesta exitosa
+      
+      // Obtener los datos del formulario
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const mensaje = document.getElementById('mensaje').value;
+      
+      // En un escenario real, esta información se enviaría a ng35608@gmail.com
+      console.log(`Nombre: ${nombre}`);
+      console.log(`Email: ${email}`);
+      console.log(`Mensaje: ${mensaje}`);
+      
+      // Mostrar mensaje de éxito
+      document.getElementById('successMessage').style.display = 'block';
+      
+      // Limpiar el formulario
+      document.getElementById('contactForm').reset();
+      
+      // Ocultar el mensaje después de unos segundos
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 5000);
+      
+      return false;
+    }
+    
+    // Función para abrir WhatsApp
+    function openWhatsApp() {
+      window.open("https://wa.me/593939975181?text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20inteligencia%20artificial", "_blank");
+    }
+    
+    // Función para desplazarse a la sección de contacto
+    function scrollToContacto() {
+      const contactoSection = document.getElementById('contacto');
+      window.scrollTo({
+        top: contactoSection.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>
