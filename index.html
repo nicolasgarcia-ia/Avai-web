@@ -1,137 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Manteniendo los meta tags y enlaces existentes -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AVAI - Agencia especializada en soluciones de Inteligencia Artificial para empresas y proyectos. Optimizamos procesos, desarrollamos chatbots y creamos sistemas inteligentes personalizados.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AVAI - Agencia de Inteligencia Artificial</title>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/62b1b622b5.js" crossorigin="anonymous"></script>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: linear-gradient(135deg, #000 60%, #1a0000), radial-gradient(circle at top left, rgba(255,0,0,0.1), transparent), #000;
-      background-blend-mode: screen;
-      color: #f5f5f5;
       font-family: 'Rajdhani', sans-serif;
+    }
+    body {
+      background: #000;
+      color: #f5f5f5;
       line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
     }
-
-    header, section, footer {
-      padding: 60px 20px;
+    .page-container {
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
+      padding: 20px;
     }
-
-    /* Header mejorado con imagen de fondo y overlay */
     header {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+      padding: 60px 20px;
       position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      padding-top: 120px;
       border-bottom: 1px solid rgba(255, 0, 0, 0.3);
     }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.15), transparent 70%);
-      z-index: 0;
-    }
-
-    header > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    header h1 {
-      font-size: 4rem;
-      margin-bottom: 10px;
-      text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-      animation: pulse 3s infinite;
-    }
-
-    header p {
-      font-size: 1.5rem;
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    header p:nth-child(3) {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    .header-cta {
-      background: red;
-      color: white;
-      padding: 12px 30px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 20px;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-    }
-
-    .header-cta:hover {
-      background: #cc0000;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
-    }
-
-    h1, h2 {
-      text-transform: uppercase;
-      font-weight: 700;
-      color: white;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-
-    h1::after, h2::after {
-      content: '';
-      position: absolute;
-      width: 50%;
-      height: 3px;
-      background: red;
-      bottom: -5px;
-      left: 0;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.5s ease;
-    }
-
-    section:hover h2::after {
-      transform: scaleX(1);
-    }
-
-    h1 span, h2 span {
+    .red-highlight {
       color: red;
     }
-
-    /* Barra de navegación circular (pastel) */
     nav {
       background-color: rgba(17, 17, 17, 0.95);
       padding: 20px;
@@ -146,182 +50,84 @@
       border-radius: 50px;
       border: 1px solid #333;
       box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
-      transition: all 0.3s ease;
       width: 90%;
       max-width: 1000px;
     }
-
-    nav.scrolled {
-      top: 10px;
-      padding: 15px 20px;
-      background-color: rgba(0, 0, 0, 0.95);
-      box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
-    }
-
     .logo {
       font-size: 24px;
       font-weight: bold;
-      transition: transform 0.3s ease;
-      padding: 0 10px;
     }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo span {
-      color: red;
-    }
-
     nav ul {
       display: flex;
       gap: 20px;
       list-style: none;
-      padding-right: 15px;
     }
-
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 600;
-      position: relative;
       padding: 8px 15px;
-      transition: all 0.3s ease;
       border-radius: 20px;
     }
-
-    nav ul li a:hover {
-      color: white;
-      background-color: rgba(255, 0, 0, 0.8);
+    .header-content {
+      z-index: 1;
+      position: relative;
     }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-      color: white;
-      transition: transform 0.3s;
-    }
-
-    .menu-toggle:hover {
-      transform: scale(1.1);
-      color: red;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        border-radius: 30px;
-      }
-      
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        background: rgba(17, 17, 17, 0.95);
-        top: 70px;
-        right: 20px;
-        width: 200px;
-        padding: 20px;
-        z-index: 999;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      nav ul li {
-        text-align: center;
-      }
-
-      nav ul li a {
-        display: block;
-        padding: 10px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-      
-      header {
-        height: 80vh;
-        padding-top: 100px;
-      }
-    }
-
-    p, li {
-      color: #ddd;
+    h1 {
+      font-size: 4rem;
       margin-bottom: 10px;
+      text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
     }
-
+    .header-cta {
+      background: red;
+      color: white;
+      padding: 12px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+    section {
+      padding: 60px 20px;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-icon {
+      color: red;
+      margin-right: 10px;
+    }
     .card-container {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
       justify-content: center;
-      perspective: 1000px;
     }
-
     .card {
       border: 2px solid red;
       padding: 20px;
       width: 280px;
       border-radius: 10px;
-      position: relative;
       background-color: rgba(17, 17, 17, 0.8);
-      transition: all 0.4s ease-in-out;
-      transform-style: preserve-3d;
-      opacity: 0;
-      transform: translateY(30px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     .card:hover {
+      transform: translateY(-10px);
       box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
-      transform: translateY(-10px) scale(1.03);
     }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, transparent, red, transparent);
-      border-radius: 12px;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .card:hover::before {
-      opacity: 1;
-      animation: rotate 2s linear infinite;
-    }
-
-    @keyframes rotate {
-      0% {
-        filter: hue-rotate(0deg);
-      }
-      100% {
-        filter: hue-rotate(360deg);
-      }
-    }
-
     .card h3 {
       color: white;
       margin-bottom: 15px;
       position: relative;
       display: inline-block;
     }
-
     .card h3::after {
       content: '';
       position: absolute;
@@ -331,27 +137,23 @@
       bottom: -5px;
       left: 0;
     }
-
     .card ul {
       list-style: none;
       padding-left: 0;
       color: #ccc;
       margin-bottom: 20px;
     }
-
     .card li {
       margin-bottom: 8px;
       padding-left: 20px;
       position: relative;
     }
-
     .card li::before {
       content: '→';
       position: absolute;
       left: 0;
       color: red;
     }
-
     .card button {
       background-color: red;
       border: none;
@@ -362,145 +164,35 @@
       border-radius: 5px;
       width: 100%;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
     }
-
-    .card button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.7s ease;
-    }
-
     .card button:hover {
       background-color: #cc0000;
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
     }
-
-    .card button:hover::before {
-      left: 100%;
+    .phase {
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 3px solid red;
+      background-color: rgba(255, 0, 0, 0.05);
+      transition: transform 0.3s ease;
     }
-
-    .card button:active {
-      transform: translateY(0);
+    .phase:hover {
+      transform: translateX(10px);
+      background-color: rgba(255, 0, 0, 0.1);
     }
-
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      padding-top: 40px;
-      border-top: 1px solid rgba(255, 0, 0, 0.2);
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #9ee1b6;
+    .phase strong {
       color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      z-index: 1000;
-      box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
     }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1) rotate(10deg);
-      box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
-    }
-
-    /* Botón de Scroll to Top mejorado */
-    #scroll-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: rgba(255, 0, 0, 0.8);
-      color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      transform: translateY(100px);
-      transition: all 0.5s ease;
-      z-index: 999;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    }
-
-    #scroll-top.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    #scroll-top:hover {
-      background-color: #cc0000;
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.7);
-    }
-
-    /* Animación para el botón de scroll para que sea más visible */
-    #scroll-top .fa-arrow-up {
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-10px);
-      }
-      60% {
-        transform: translateY(-5px);
-      }
-    }
-
-    .section-icon {
-      font-size: 24px;
-      margin-right: 10px;
-      color: red;
-      vertical-align: middle;
-    }
-
     .benefit-list {
       list-style: none;
       padding-left: 0;
     }
-
     .benefit-list li {
       margin-bottom: 12px;
       padding-left: 30px;
       position: relative;
     }
-
     .benefit-list li::before {
       content: '✓';
       position: absolute;
@@ -508,43 +200,6 @@
       color: red;
       font-weight: bold;
     }
-
-    .phase {
-      padding: 15px;
-      margin-bottom: 15px;
-      border-left: 3px solid red;
-      background-color: rgba(255, 0, 0, 0.05);
-      transition: transform 0.3s, background-color 0.3s;
-    }
-
-    .phase:hover {
-      transform: translateX(10px);
-      background-color: rgba(255, 0, 0, 0.1);
-    }
-
-    .phase strong {
-      color: white;
-    }
-
-    button {
-      cursor: pointer;
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      margin-top: 20px;
-    }
-
-    button:hover {
-      background-color: #cc0000;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-    }
-
     .garantia-box {
       border: 2px dashed red;
       padding: 20px;
@@ -552,252 +207,370 @@
       background-color: rgba(255, 0, 0, 0.05);
       text-align: center;
       margin-top: 20px;
-      position: relative;
-      overflow: hidden;
     }
-
-    .garantia-box::before {
-      content: '';
-      position: absolute;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, transparent 70%);
-      top: -50%;
-      left: -50%;
-      animation: pulse 4s infinite;
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255, 0, 0, 0.2);
+      margin-top: 40px;
     }
-
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      background-color: rgba(17, 17, 17, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+    }
+    .whatsapp-contact {
+      flex: 1;
+      min-width: 300px;
+      background-color: rgba(17, 17, 17, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ddd;
+      font-weight: bold;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 0, 0, 0.2);
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: red;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+    }
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    .submit-btn {
+      background-color: red;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      width: 100%;
+    }
+    .submit-btn:hover {
+      background-color: #cc0000;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+    .whatsapp-btn {
+      background-color: #25D366;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 30px;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .whatsapp-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    }
+    .whatsapp-btn i {
+      font-size: 24px;
+    }
+    .whatsapp-text {
+      margin-bottom: 20px;
+      color: #f5f5f5;
+    }
     @keyframes pulse {
       0% {
-        transform: scale(0.8);
-        opacity: 0.5;
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
       }
-      50% {
-        transform: scale(1);
-        opacity: 0.2;
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
       }
       100% {
-        transform: scale(0.8);
-        opacity: 0.5;
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
       }
     }
-    
-    /* Animación adicional para el logo del header */
-    @keyframes pulse {
-      0% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-      }
-      50% {
-        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.4);
-      }
-      100% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-      }
+    .success-message {
+      display: none;
+      background-color: rgba(0, 128, 0, 0.2);
+      color: #7aff7a;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 4px solid #00cc00;
+      margin-top: 20px;
     }
   </style>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='black'/%3E%3Cpath d='M10 8 L16 8 L22 24 L16 24 L10 8 Z' fill='white'/%3E%3Cpath d='M20 8 L20 24' stroke='red' stroke-width='4'/%3E%3C/svg%3E">
 </head>
 <body>
+  <div class="page-preview">
+    <!-- Barra de navegación -->
+    <nav id="navbar">
+      <div class="logo">AV<span class="red-highlight">AI</span></div>
+      <ul id="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#soluciones">Soluciones</a></li>
+        <li><a href="#garantia">Garantía</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
 
-  <!-- Barra de navegación circular (estilo pastel) -->
-  <nav id="navbar">
-    <div class="logo">AV<span>AI</span></div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-    <ul id="menu">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-      <li><a href="#soluciones">Soluciones</a></li>
-      <li><a href="#garantia">Garantía</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-
-  <!-- Header mejorado con imagen de fondo -->
-  <header id="inicio" class="fade-in">
-    <h1>AV<span>AI</span></h1>
-    <p>Agencia de Inteligencia Artificial</p>
-    <p>Llevamos negocios tradicionales al siguiente nivel con automatización, inteligencia artificial y eficiencia operativa.</p>
-    <a href="#contacto" class="header-cta">Transformar mi Empresa</a>
-  </header>
-
-  <section id="soluciones" class="fade-in">
-    <h2><i class="fas fa-cogs section-icon"></i> ¿Qué hacemos?</h2>
-    <p>Diseñamos infraestructuras de inteligencia artificial personalizadas que impulsan, automatizan y escalan negocios</p>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-stream section-icon"></i> ¿Cómo funciona?</h2>
-    <div class="phase">
-      <p><strong>Fase 1:</strong> Analizamos a fondo tu operación y procesos clave. Identificamos tareas repetitivas, tiempos muertos y oportunidades concretas para automatizar y optimizar.</p>
-    </div>
-    <div class="phase">
-      <p><strong>Fase 2:</strong> Diseñamos agentes inteligentes y automatizaciones personalizadas. Desde bots hasta flujos internos, integraciones y dashboards adaptados a tu negocio.</p>
-    </div>
-    <div class="phase">
-      <p><strong>Fase 3:</strong> Conectamos todo y dejamos el sistema funcionando. Te entregamos una solución llave en mano y te acompañamos en los primeros pasos de uso real.</p>
-    </div>
-    <div class="phase">
-      <p><strong>Fase 4:</strong> Damos seguimiento, ajustamos y potenciamos resultados. Mejoramos la eficiencia, elevamos la experiencia del cliente y ayudamos a captar más oportunidades y leads con sistemas que trabajan solos.</p>
-    </div>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-user-check section-icon"></i> ¿Para quién es esto?</h2>
-    <p>Empresas pequeñas y medianas en Latinoamérica que saben que tienen procesos mejorables, están creciendo, quieren escalar y necesitan optimizar tiempo y recursos.</p>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-star section-icon"></i> Beneficios reales</h2>
-    <ul class="benefit-list">
-      <li>Automatización de tareas repetitivas</li>
-      <li>Reducción de costos operativos</li>
-      <li>Generación de leads calificados</li>
-      <li>Respuesta rápida y profesional a tus clientes</li>
-      <li>Mayor control de tu operación</li>
-    </ul>
-  </section>
-
-  <section id="sobre-nosotros" class="fade-in">
-    <h2><i class="fas fa-rocket section-icon"></i> Sobre AVAI</h2>
-    <p>Somos una agencia creada con un objetivo: convertir empresas normales en empresas del futuro. Combinamos lo técnico, lo creativo y lo estratégico para transformar tu operación con IA.</p>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-boxes section-icon"></i> Nuestros Paquetes</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>BÁSICO</h3>
-        <ul>
-          <li>Automatización de agendamiento</li>
-          <li>Formularios inteligentes conectados</li>
-          <li>Registro de leads automático</li>
-          <li>Notificaciones internas del equipo</li>
-          <li>Respuestas automáticas a interesados</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
+    <!-- Header -->
+    <header id="inicio">
+      <div class="header-content">
+        <h1>AV<span class="red-highlight">AI</span></h1>
+        <p>Agencia de Inteligencia Artificial</p>
+        <p>Llevamos negocios tradicionales al siguiente nivel con automatización, inteligencia artificial y eficiencia operativa.</p>
+        <a href="#contacto" class="header-cta">Transformar mi Empresa</a>
       </div>
-      <div class="card">
-        <h3>PRO</h3>
-        <ul>
-          <li>Todo lo del Básico</li>
-          <li>Dashboard visual en tiempo real</li>
-          <li>Agente de WhatsApp para atención</li>
-          <li>FAQ, políticas y respuestas automáticas</li>
-          <li>Soporte básico al cliente</li>
+    </header>
+
+    <div class="page-container">
+      <!-- Sección Soluciones -->
+      <section id="soluciones">
+        <h2><span class="section-icon">⚙️</span> ¿Qué hacemos?</h2>
+        <p>Diseñamos infraestructuras de inteligencia artificial personalizadas que impulsan, automatizan y escalan negocios</p>
+      </section>
+
+      <!-- Sección Cómo funciona -->
+      <section>
+        <h2><span class="section-icon">📊</span> ¿Cómo funciona?</h2>
+        <div class="phase">
+          <p><strong>Fase 1:</strong> Analizamos a fondo tu operación y procesos clave. Identificamos tareas repetitivas, tiempos muertos y oportunidades concretas para automatizar y optimizar.</p>
+        </div>
+        <div class="phase">
+          <p><strong>Fase 2:</strong> Diseñamos agentes inteligentes y automatizaciones personalizadas. Desde bots hasta flujos internos, integraciones y dashboards adaptados a tu negocio.</p>
+        </div>
+        <div class="phase">
+          <p><strong>Fase 3:</strong> Conectamos todo y dejamos el sistema funcionando. Te entregamos una solución llave en mano y te acompañamos en los primeros pasos de uso real.</p>
+        </div>
+        <div class="phase">
+          <p><strong>Fase 4:</strong> Damos seguimiento, ajustamos y potenciamos resultados. Mejoramos la eficiencia, elevamos la experiencia del cliente y ayudamos a captar más oportunidades y leads con sistemas que trabajan solos.</p>
+        </div>
+      </section>
+
+      <!-- Sección Para quién es -->
+      <section>
+        <h2><span class="section-icon">👤</span> ¿Para quién es esto?</h2>
+        <p>Empresas pequeñas y medianas en Latinoamérica que saben que tienen procesos mejorables, están creciendo, quieren escalar y necesitan optimizar tiempo y recursos.</p>
+      </section>
+
+      <!-- Sección Beneficios -->
+      <section>
+        <h2><span class="section-icon">⭐</span> Beneficios reales</h2>
+        <ul class="benefit-list">
+          <li>Automatización de tareas repetitivas</li>
+          <li>Reducción de costos operativos</li>
+          <li>Generación de leads calificados</li>
+          <li>Respuesta rápida y profesional a tus clientes</li>
+          <li>Mayor control de tu operación</li>
         </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
-      <div class="card">
-        <h3>PREMIUM</h3>
-        <ul>
-          <li>Todo lo del Pro</li>
-          <li>Marketing y generación de leads con IA</li>
-          <li>Agente de llamadas para ventas</li>
-          <li>Integración con CRM completo</li>
-          <li>Análisis de datos mensuales</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
-      <div class="card">
-        <h3>PERSONALIZADO</h3>
-        <ul>
-          <li>Diseñado contigo</li>
-          <li>Agentes de IA ajustados a tus necesidades</li>
-          <li>Análisis y optimizacion continua</li>
-          <li>Acompañamiento estratégico uno a uno</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
+      </section>
+
+      <!-- Sección Sobre Nosotros -->
+      <section id="sobre-nosotros">
+        <h2><span class="section-icon">🚀</span> Sobre AVAI</h2>
+        <p>Somos una agencia creada con un objetivo: convertir empresas normales en empresas del futuro. Combinamos lo técnico, lo creativo y lo estratégico para transformar tu operación con IA.</p>
+      </section>
+
+      <!-- Sección Paquetes -->
+      <section>
+        <h2><span class="section-icon">📦</span> Nuestros Paquetes</h2>
+        <div class="card-container">
+          <div class="card">
+            <h3>BÁSICO</h3>
+            <ul>
+              <li>Automatización de agendamiento</li>
+              <li>Formularios inteligentes conectados</li>
+              <li>Registro de leads automático</li>
+              <li>Notificaciones internas del equipo</li>
+              <li>Respuestas automáticas a interesados</li>
+            </ul>
+            <button onclick="scrollToContacto()">Agenda una llamada</button>
+          </div>
+          <div class="card">
+            <h3>PRO</h3>
+            <ul>
+              <li>Todo lo del Básico</li>
+              <li>Dashboard visual en tiempo real</li>
+              <li>Agente de WhatsApp para atención</li>
+              <li>FAQ, políticas y respuestas automáticas</li>
+              <li>Soporte básico al cliente</li>
+            </ul>
+            <button onclick="scrollToContacto()">Agenda una llamada</button>
+          </div>
+          <div class="card">
+            <h3>PREMIUM</h3>
+            <ul>
+              <li>Todo lo del Pro</li>
+              <li>Marketing y generación de leads con IA</li>
+              <li>Agente de llamadas para ventas</li>
+              <li>Integración con CRM completo</li>
+              <li>Análisis de datos mensuales</li>
+            </ul>
+            <button onclick="scrollToContacto()">Agenda una llamada</button>
+          </div>
+          <div class="card">
+            <h3>PERSONALIZADO</h3>
+            <ul>
+              <li>Diseñado contigo</li>
+              <li>Agentes de IA ajustados a tus necesidades</li>
+              <li>Análisis y optimizacion continua</li>
+              <li>Acompañamiento estratégico uno a uno</li>
+            </ul>
+            <button onclick="scrollToContacto()">Agenda una llamada</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección Garantía -->
+      <section id="garantia">
+        <h2><span class="section-icon">🛡️</span> Garantía</h2>
+        <div class="garantia-box">
+          <p>Si en 30 días no ves mejoras reales en tus procesos, automatizaciones o respuestas, te devolvemos tu dinero. Sin excusas.</p>
+        </div>
+      </section>
+
+      <!-- Sección Contacto Mejorada -->
+      <section id="contacto">
+        <h2><span class="section-icon">📞</span> ¿Listo para empezar?</h2>
+        <p>Contáctanos y descubre cómo AVAI puede transformar tu empresa.</p>
+        
+        <div class="contact-container">
+          <!-- Formulario de contacto -->
+          <div class="contact-form">
+            <h3>Déjanos tus datos</h3>
+            <p style="margin-bottom: 20px;">Te responderemos en menos de 24 horas con una propuesta personalizada</p>
+            
+            <form id="contactForm" onsubmit="return submitForm(event)">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="mensaje">¿Cómo podemos ayudarte?</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">Enviar mensaje</button>
+            </form>
+            
+            <div class="success-message" id="successMessage">
+              <p>¡Gracias por contactarnos! Tu mensaje ha sido enviado correctamente. Te responderemos a la brevedad.</p>
+            </div>
+          </div>
+          
+          <!-- Opción de WhatsApp -->
+          <div class="whatsapp-contact">
+            <h3>¿Prefieres una respuesta inmediata?</h3>
+            <p class="whatsapp-text">Contáctanos directamente por WhatsApp y recibe atención personalizada al instante.</p>
+            <button class="whatsapp-btn" onclick="openWhatsApp()">
+              <span>Hablar por WhatsApp</span> 📱
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 AVAI. Todos los derechos reservados.</p>
+      </footer>
     </div>
-  </section>
-
-  <section id="garantia" class="fade-in">
-    <h2><i class="fas fa-shield-alt section-icon"></i> Garantía</h2>
-    <div class="garantia-box">
-      <p>Si en 30 días no ves mejoras reales en tus procesos, automatizaciones o respuestas, te devolvemos tu dinero. Sin excusas.</p>
-    </div>
-  </section>
-
-  <section id="contacto" class="fade-in">
-    <h2><i class="fas fa-phone section-icon"></i> ¿Listo para empezar?</h2>
-    <p>Agenda una llamada con nosotros y descubre cómo AVAI puede transformar tu empresa.</p>
-    <button onclick="openWhatsApp()">Agendar llamada</button>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 AVAI. Todos los derechos reservados.</p>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/593939975181?text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20inteligencia%20artificial" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <!-- Botón de scroll to top mejorado con animación -->
-  <div id="scroll-top">
-    <i class="fas fa-arrow-up"></i>
   </div>
 
   <script>
-    // Toggle Menu Móvil
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("active");
+    // Función para enviar el formulario
+    function submitForm(event) {
+      event.preventDefault();
+      
+      // Aquí iría el código para enviar el formulario a tu correo
+      // En un caso real, esto se conectaría a un backend que procesaría el envío
+      // Por ahora, simularemos una respuesta exitosa
+      
+      // Obtener los datos del formulario
+      const nombre = document.getElementById('nombre').value;
+      const email = document.getElementById('email').value;
+      const mensaje = document.getElementById('mensaje').value;
+      
+      // En un escenario real, esta información se enviaría a ng35608@gmail.com
+      console.log(`Nombre: ${nombre}`);
+      console.log(`Email: ${email}`);
+      console.log(`Mensaje: ${mensaje}`);
+      
+      // Mostrar mensaje de éxito
+      document.getElementById('successMessage').style.display = 'block';
+      
+      // Limpiar el formulario
+      document.getElementById('contactForm').reset();
+      
+      // Ocultar el mensaje después de unos segundos
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 5000);
+      
+      return false;
     }
-
-    // Abrir WhatsApp
+    
+    // Función para abrir WhatsApp
     function openWhatsApp() {
       window.open("https://wa.me/593939975181?text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20inteligencia%20artificial", "_blank");
     }
-
-    // Scroll to top
-    document.getElementById('scroll-top').addEventListener('click', function() {
+    
+    // Función para desplazarse a la sección de contacto
+    function scrollToContacto() {
+      const contactoSection = document.getElementById('contacto');
       window.scrollTo({
-        top: 0,
+        top: contactoSection.offsetTop - 80,
         behavior: 'smooth'
       });
-    });
-
-    // Animación al hacer scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.fade-in, .card').forEach(el => observer.observe(el));
-
-    // Animar las cards con un delay para que aparezcan secuencialmente
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-      setTimeout(() => {
-        observer.observe(card);
-      }, index * 150);
-    });
-
-    // Efecto suave para los links de navegación
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-        
-        // Cerrar menú móvil si está abierto
-        if (window.innerWidth <= 768) {
-          document.getElementById('menu').classList.remove('active');
-        }
-      });
-    });
+    }
   </script>
 </body>
 </html>
