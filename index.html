@@ -706,26 +706,28 @@
     <button onclick="openWhatsApp()">Agendar llamada</button>
     
     <!-- Formulario de contacto añadido -->
-    <div style="margin-top: 40px; background: rgba(17, 17, 17, 0.8); padding: 25px; border-radius: 10px; border: 1px solid rgba(255, 0, 0, 0.3);">
+    <section style="max-width: 500px; margin: 40px auto; background: rgba(17, 17, 17, 0.8); padding: 25px; border-radius: 10px; border: 1px solid rgba(255, 0, 0, 0.3); font-family: 'Inter', sans-serif;">
       <h3 style="margin-bottom: 20px; color: white;">O déjanos tus datos</h3>
-      <form id="contactForm" action="https://formcarry.com/s/XhBOWlfURhU" method="POST">
+      <form action="https://formcarry.com/s/XhBOWlfURhU" method="POST" enctype="multipart/form-data">
+        
         <div style="margin-bottom: 15px;">
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
+          <input type="text" name="name" placeholder="Tu nombre completo" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
         </div>
+        
         <div style="margin-bottom: 15px;">
-          <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
         </div>
+        
         <div style="margin-bottom: 15px;">
-          <textarea id="descripcion" name="descripcion" placeholder="Cuéntanos sobre tu proyecto" rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;"></textarea>
+          <textarea name="message" placeholder="Cuéntanos sobre tu proyecto" rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;"></textarea>
         </div>
-        <!-- Campos ocultos para FormSubmit -->
-        <input type="hidden" name="_subject" value="Nuevo contacto desde AVAI">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+    
+        <input type="hidden" name="_redirect" value="https://tudominio.com/gracias.html">
+    
         <button type="submit" style="width: 100%; background-color: red; cursor: pointer; color: white; border: none; padding: 12px 25px; font-weight: bold; border-radius: 5px; font-size: 16px; transition: all 0.3s ease;">Enviar mensaje</button>
       </form>
-    </div>
-  </section>
+    </section>
+    
 
   <footer>
     <p>&copy; 2025 AVAI. Todos los derechos reservados.</p>
