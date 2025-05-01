@@ -410,29 +410,6 @@
       transform: translateY(0);
     }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background-color: #9ee1b6;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      z-index: 1000;
-      box-shadow: 0 0 15px rgba(37, 211, 102, 0.5);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1) rotate(10deg);
-      box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
-    }
-
     /* Botón de Scroll to Top mejorado */
     #scroll-top {
       position: fixed;
@@ -727,15 +704,34 @@
     <h2><i class="fas fa-phone section-icon"></i> ¿Listo para empezar?</h2>
     <p>¡Estamos listos para llevar tu negocio al siguiente nivel con IA! Contáctanos para agendar una reunión y comenzar a trabajar juntos.</p>
     <button onclick="openWhatsApp()">Agendar llamada</button>
+    
+    <!-- Formulario de contacto añadido -->
+    <div style="margin-top: 40px; background: rgba(17, 17, 17, 0.8); padding: 25px; border-radius: 10px; border: 1px solid rgba(255, 0, 0, 0.3);">
+      <h3 style="margin-bottom: 20px; color: white;">O déjanos tus datos</h3>
+      <form id="contactForm" action="https://formsubmit.co/ng35608@gmail.com" method="POST">
+        <div style="margin-bottom: 15px;">
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <textarea id="descripcion" name="descripcion" placeholder="Cuéntanos sobre tu proyecto" rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;"></textarea>
+        </div>
+        <!-- Campos ocultos para FormSubmit -->
+        <input type="hidden" name="_subject" value="Nuevo contacto desde AVAI">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+        <button type="submit" style="width: 100%; background-color: red; cursor: pointer; color: white; border: none; padding: 12px 25px; font-weight: bold; border-radius: 5px; font-size: 16px; transition: all 0.3s ease;">Enviar mensaje</button>
+      </form>
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 AVAI. Todos los derechos reservados.</p>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/593939975181?text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20inteligencia%20artificial" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- Botón WhatsApp eliminado -->
 
   <!-- Botón de scroll to top mejorado con animación -->
   <div id="scroll-top">
