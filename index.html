@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AVAIN - Agencia especializada en soluciones de Inteligencia Artificial para empresas y proyectos. Optimizamos procesos, desarrollamos chatbots y creamos sistemas inteligentes personalizados.">
   <title>AVAIN - Agencia de Inteligencia Artificial</title>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/62b1b622b5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -14,7 +16,7 @@
       scroll-behavior: smooth;
     }
 
-    /* Efecto LED azul más suave */
+    /* Efecto LED azul eléctrico en bordes */
     body::before {
       content: '';
       position: fixed;
@@ -23,22 +25,35 @@
       right: 0;
       bottom: 0;
       pointer-events: none;
-      box-shadow: inset 0 0 15px rgba(0, 153, 255, 0.2);
+      box-shadow: inset 0 0 20px rgba(0, 153, 255, 0.3),
+                  inset 0 0 30px rgba(0, 102, 255, 0.2),
+                  inset 0 0 40px rgba(0, 68, 255, 0.1);
       z-index: 9999;
-      border: 1px solid rgba(0, 204, 255, 0.1);
-      animation: pulseBorder 3s infinite alternate;
+      border: 1px solid rgba(0, 204, 255, 0.2);
+      animation: pulseBorder 2s infinite alternate;
     }
 
     @keyframes pulseBorder {
-      0% { box-shadow: inset 0 0 15px rgba(0, 153, 255, 0.2); }
-      100% { box-shadow: inset 0 0 20px rgba(0, 204, 255, 0.3); }
+      0% {
+        box-shadow: inset 0 0 20px rgba(0, 153, 255, 0.3),
+                    inset 0 0 30px rgba(0, 102, 255, 0.2),
+                    inset 0 0 40px rgba(0, 68, 255, 0.1);
+      }
+      100% {
+        box-shadow: inset 0 0 25px rgba(0, 153, 255, 0.5),
+                    inset 0 0 35px rgba(0, 102, 255, 0.3),
+                    inset 0 0 45px rgba(0, 68, 255, 0.2);
+      }
     }
 
     body {
-      background: #111;
-      color: #eee;
+      background: linear-gradient(135deg, #000 60%, #001a1a), radial-gradient(circle at top left, rgba(0, 102, 255, 0.1), transparent), #000;
+      background-blend-mode: screen;
+      color: #f5f5f5;
       font-family: 'Rajdhani', sans-serif;
       line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
     }
 
     header, section, footer {
@@ -47,6 +62,7 @@
       margin: auto;
     }
 
+    /* Header con imagen fija */
     header {
       position: relative;
       height: 100vh;
@@ -54,72 +70,537 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), 
-                  url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: scroll;
+      padding-top: 120px;
+      border-bottom: 1px solid rgba(0, 102, 255, 0.3);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.15), transparent 70%);
+      z-index: 0;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
       font-size: 4rem;
       margin-bottom: 10px;
-      color: #fff;
-      text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+      text-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
+      animation: pulse 3s infinite;
     }
 
     header p {
-      font-size: 1.2rem;
-      color: #ccc;
+      font-size: 1.5rem;
       max-width: 600px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    header p:nth-child(3) {
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
 
     .header-cta {
-      background: #0099ff;
+      background: #0066ff;
       color: white;
       padding: 12px 30px;
-      border-radius: 30px;
       text-decoration: none;
+      border-radius: 30px;
       font-weight: bold;
-      margin-top: 20px;
       display: inline-block;
-      transition: all 0.3s;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
     }
 
     .header-cta:hover {
-      background: #0077cc;
+      background: #0052cc;
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0, 153, 255, 0.5);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.6);
     }
 
-    h1, h2, h3 {
-      color: #fff;
-    }
-
-    h2 {
-      margin-bottom: 30px;
+    h1, h2 {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
       position: relative;
       display: inline-block;
     }
 
-    h2::after {
+    h1::after, h2::after {
       content: '';
       position: absolute;
       width: 50%;
       height: 3px;
-      background: #0099ff;
-      bottom: -10px;
+      background: #0066ff;
+      bottom: -5px;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+
+    section:hover h2::after {
+      transform: scaleX(1);
+    }
+
+    h1 span, h2 span {
+      color: #0066ff;
+    }
+
+    /* Barra de navegación */
+    nav {
+      background-color: rgba(17, 17, 17, 0.95);
+      padding: 20px;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 50px;
+      border: 1px solid #333;
+      box-shadow: 0 4px 20px rgba(0, 102, 255, 0.2);
+      transition: all 0.3s ease;
+      width: 90%;
+      max-width: 1000px;
+    }
+
+    nav.scrolled {
+      top: 10px;
+      padding: 15px 20px;
+      background-color: rgba(0, 0, 0, 0.95);
+      box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+      padding: 0 10px;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .logo span {
+      color: #0066ff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      padding-right: 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding: 8px 15px;
+      transition: all 0.3s ease;
+      border-radius: 20px;
+    }
+
+    nav ul li a:hover {
+      color: white;
+      background-color: rgba(0, 102, 255, 0.8);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+      transition: transform 0.3s;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
+      color: #0066ff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        border-radius: 30px;
+      }
+      
+      nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: rgba(17, 17, 17, 0.95);
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        z-index: 999;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        text-align: center;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 10px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+      
+      header {
+        height: 80vh;
+        padding-top: 100px;
+      }
+    }
+
+    p, li {
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      perspective: 1000px;
+    }
+
+    .card {
+      border: 2px solid #0066ff;
+      padding: 20px;
+      width: 280px;
+      border-radius: 10px;
+      position: relative;
+      background-color: rgba(17, 17, 17, 0.8);
+      transition: all 0.4s ease-in-out;
+      transform-style: preserve-3d;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      box-shadow: 0 0 25px rgba(0, 102, 255, 0.7);
+      transform: translateY(-10px) scale(1.03);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, transparent, #0066ff, transparent);
+      border-radius: 12px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .card h3 {
+      color: white;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .card h3::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #0066ff;
+      bottom: -5px;
       left: 0;
     }
 
-    p {
-      color: #bbb;
-      margin-bottom: 15px;
-      line-height: 1.6;
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+      color: #ccc;
+      margin-bottom: 20px;
     }
 
-    /* CHATBOT MEJORADO */
+    .card li {
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #0066ff;
+    }
+
+    .card button {
+      background-color: #0066ff;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.7s ease;
+    }
+
+    .card button:hover {
+      background-color: #0052cc;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+    }
+
+    .card button:hover::before {
+      left: 100%;
+    }
+
+    .card button:active {
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+      padding-top: 40px;
+      border-top: 1px solid rgba(0, 102, 255, 0.2);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Botón de Scroll to Top */
+    #scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 102, 255, 0.8);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(100px);
+      transition: all 0.5s ease;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+    }
+
+    #scroll-top.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #scroll-top:hover {
+      background-color: #0052cc;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.7);
+    }
+
+    #scroll-top .fa-arrow-up {
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .section-icon {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #0066ff;
+      vertical-align: middle;
+    }
+
+    .benefit-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .benefit-list li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .benefit-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #0066ff;
+      font-weight: bold;
+    }
+
+    .phase {
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 3px solid #0066ff;
+      background-color: rgba(0, 102, 255, 0.05);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .phase:hover {
+      transform: translateX(10px);
+      background-color: rgba(0, 102, 255, 0.1);
+    }
+
+    .phase strong {
+      color: white;
+    }
+
+    button {
+      cursor: pointer;
+      background-color: #0066ff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #0052cc;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
+    }
+
+    .garantia-box {
+      border: 2px dashed #0066ff;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(0, 102, 255, 0.05);
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .garantia-box::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
+      top: -50%;
+      left: -50%;
+      animation: pulse 4s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scale(1);
+        opacity: 0.2;
+      }
+      100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(0, 102, 255, 0.8), 0 0 30px rgba(0, 102, 255, 0.4);
+      }
+      100% {
+        text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+      }
+    }
+
+    /* CHATBOT CON BOTONES DE OPCIONES */
     .chat-widget {
       position: fixed;
       bottom: 20px;
@@ -131,15 +612,15 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #0099ff, #0066ff);
+      background: linear-gradient(135deg, #0066ff, #0099ff);
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 0 15px rgba(0, 153, 255, 0.5);
-      transition: all 0.3s;
+      box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
+      transition: all 0.3s ease;
     }
     
     .chat-button:hover {
@@ -158,13 +639,13 @@
       display: none;
       flex-direction: column;
       overflow: hidden;
-      border: 1px solid #0099ff;
+      border: 1px solid #0066ff;
       box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
     }
     
     .chat-header {
       padding: 15px;
-      background: linear-gradient(135deg, #0099ff, #0066ff);
+      background: linear-gradient(135deg, #0066ff, #0099ff);
       color: white;
       font-weight: bold;
       display: flex;
@@ -246,90 +727,334 @@
       color: #0099ff;
     }
 
-    /* CONTENIDO PRINCIPAL VISIBLE */
-    .content-section {
-      padding: 80px 20px;
-      background: #111;
-      border-bottom: 1px solid rgba(0, 102, 255, 0.1);
-    }
-
-    .card {
-      background: rgba(30, 30, 40, 0.8);
-      border-radius: 10px;
+    /* ROI Calculator */
+    .roi-calculator {
+      background: rgba(17, 17, 17, 0.8);
+      border-radius: 15px;
       padding: 25px;
-      margin-bottom: 30px;
-      border-left: 3px solid #0099ff;
+      border: 1px solid #0066ff;
+      margin-top: 30px;
     }
-
-    /* Botón de scroll to top */
-    #scroll-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #0099ff;
-      width: 50px;
-      height: 50px;
+    
+    .slider-container {
+      margin-bottom: 15px;
+    }
+    
+    .slider-container label {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-weight: 500;
+    }
+    
+    .slider-container input[type="range"] {
+      width: 100%;
+      height: 5px;
+      -webkit-appearance: none;
+      background: linear-gradient(to right, #0066ff, #0099ff);
+      border-radius: 5px;
+      outline: none;
+    }
+    
+    .slider-container input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
+      background: #fff;
       cursor: pointer;
-      opacity: 0;
-      transition: all 0.3s;
-      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
+    }
+    
+    .slider-values {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #ccc;
+    }
+    
+    .result-container {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(0, 102, 255, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .result-value {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0099ff;
+      margin: 10px 0;
     }
 
-    #scroll-top.active {
-      opacity: 1;
+    /* Configurador */
+    .solution-builder {
+      background: rgba(17, 17, 17, 0.8);
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid #0066ff;
+      margin-top: 30px;
+    }
+    
+    .builder-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .option-toggle {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(0, 102, 255, 0.3);
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .option-toggle.active {
+      background: #0066ff;
+      border-color: #0066ff;
+    }
+    
+    .solution-summary {
+      padding: 15px;
+      background: rgba(0, 102, 255, 0.1);
+      border-radius: 10px;
     }
 
-    #scroll-top:hover {
-      background: #0077cc;
-      transform: translateY(-5px);
+    /* Micro-interacciones */
+    .hover-grow {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-grow:hover {
+      transform: scale(1.03);
     }
   </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='black'/%3E%3Cpath d='M10 8 L16 8 L22 24 L16 24 L10 8 Z' fill='white'/%3E%3Cpath d='M20 8 L20 24' stroke='%230066ff' stroke-width='4'/%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- Header principal -->
-  <header id="inicio">
-    <h1>AVAIN</h1>
-    <p>Soluciones de Inteligencia Artificial para tu negocio</p>
-    <p>Automatizamos tus procesos y llevamos tu empresa al siguiente nivel con tecnología de vanguardia.</p>
-    <a href="#contacto" class="header-cta">Comenzar ahora</a>
+  <!-- Barra de navegación circular (estilo pastel) -->
+  <nav id="navbar">
+    <div class="logo">AV<span>AIN</span></div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul id="menu">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+      <li><a href="#soluciones">Soluciones</a></li>
+      <li><a href="#garantia">Garantía</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header mejorado con imagen de fondo -->
+  <header id="inicio" class="fade-in">
+    <h1>AV<span>AIN</span></h1>
+    <p>Agencia de Inteligencia Artificial</p>
+    <p>Llevamos negocios tradicionales al siguiente nivel con automatización, inteligencia artificial y eficiencia operativa.</p>
+    <a href="#contacto" class="header-cta">Transformar mi Empresa</a>
   </header>
 
-  <!-- Sección de contenido de ejemplo -->
-  <section class="content-section">
-    <h2>Nuestros Servicios</h2>
-    <p>Ofrecemos soluciones personalizadas de IA para diversos sectores empresariales:</p>
-    
-    <div class="card">
-      <h3>Automatización de Procesos</h3>
-      <p>Reduzca costos operativos automatizando tareas repetitivas con nuestros agentes inteligentes.</p>
+  <section id="soluciones" class="fade-in">
+    <h2><i class="fas fa-cogs section-icon"></i> ¿Qué hacemos?</h2>
+    <p>Diseñamos infraestructuras de inteligencia artificial personalizadas que impulsan, automatizan y escalan negocios</p>
+  </section>
+
+  <section class="fade-in">
+    <h2><i class="fas fa-stream section-icon"></i> ¿Cómo funciona?</h2>
+    <div class="phase">
+      <p><strong>Fase 1:</strong> Analizamos a fondo tu operación y procesos clave. Identificamos tareas repetitivas, tiempos muertos y oportunidades concretas para automatizar y optimizar.</p>
     </div>
-    
-    <div class="card">
-      <h3>Chatbots Avanzados</h3>
-      <p>Atienda a sus clientes 24/7 con nuestros asistentes virtuales con tecnología de lenguaje natural.</p>
+    <div class="phase">
+      <p><strong>Fase 2:</strong> Diseñamos agentes inteligentes y automatizaciones personalizadas. Desde bots hasta flujos internos, integraciones y dashboards adaptados a tu negocio.</p>
+    </div>
+    <div class="phase">
+      <p><strong>Fase 3:</strong> Conectamos todo y dejamos el sistema funcionando. Te entregamos una solución llave en mano y te acompañamos en los primeros pasos de uso real.</p>
+    </div>
+    <div class="phase">
+      <p><strong>Fase 4:</strong> Damos seguimiento, ajustamos y potenciamos resultados. Mejoramos la eficiencia, elevamos la experiencia del cliente y ayudamos a captar más oportunidades y leads con sistemas que trabajan solos.</p>
     </div>
   </section>
 
-  <!-- Sección de contacto -->
-  <section id="contacto" class="content-section">
-    <h2>Contacto</h2>
-    <p>¿Listo para transformar tu negocio? Contáctanos hoy mismo.</p>
-    
-    <form style="max-width: 500px;">
-      <input type="text" placeholder="Nombre" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: #eee; border-radius: 5px;">
-      <input type="email" placeholder="Email" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: #eee; border-radius: 5px;">
-      <textarea placeholder="Mensaje" style="width: 100%; padding: 12px; margin-bottom: 15px; background: #222; border: 1px solid #333; color: #eee; border-radius: 5px; height: 120px;"></textarea>
-      <button type="submit" style="background: #0099ff; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; transition: all 0.3s;">Enviar Mensaje</button>
-    </form>
+  <section class="fade-in">
+    <h2><i class="fas fa-user-check section-icon"></i> ¿Para quién es esto?</h2>
+    <p>Empresas pequeñas y medianas en Latinoamérica que saben que tienen procesos mejorables, están creciendo, quieren escalar y necesitan optimizar tiempo y recursos.</p>
   </section>
 
-  <!-- Chatbot -->
+  <section class="fade-in">
+    <h2><i class="fas fa-star section-icon"></i> Beneficios reales</h2>
+    <ul class="benefit-list">
+      <li>Automatización de tareas repetitivas</li>
+      <li>Reducción de costos operativos</li>
+      <li>Generación de leads calificados</li>
+      <li>Respuesta rápida y profesional a tus clientes</li>
+      <li>Mayor control de tu operación</li>
+    </ul>
+  </section>
+
+  <!-- NUEVA SECCIÓN: Calculadora de ROI -->
+  <section class="fade-in">
+    <h2><i class="fas fa-calculator section-icon"></i> Calcula tu ROI</h2>
+    <div class="roi-calculator">
+      <div class="slider-container">
+        <label>Horas diarias perdidas en tareas repetitivas: <span id="hours-value">4</span></label>
+        <input type="range" id="hours" min="1" max="10" value="4" oninput="updateROI()">
+        <div class="slider-values">
+          <span>1h</span>
+          <span>10h</span>
+        </div>
+      </div>
+      
+      <div class="slider-container">
+        <label>Empleados afectados: <span id="employees-value">3</span></label>
+        <input type="range" id="employees" min="1" max="20" value="3" oninput="updateROI()">
+        <div class="slider-values">
+          <span>1</span>
+          <span>20</span>
+        </div>
+      </div>
+      
+      <div class="result-container">
+        <p>Ahorro mensual estimado:</p>
+        <div class="result-value" id="roi-result">$1,800</div>
+        <small>Basado en un costo promedio de $30/hora</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre-nosotros" class="fade-in">
+    <h2><i class="fas fa-rocket section-icon"></i> Sobre AVAIN</h2>
+    <p>Somos una agencia creada con un objetivo: convertir empresas normales en empresas del futuro. Combinamos lo técnico, lo creativo y lo estratégico para transformar tu operación con IA.</p>
+  </section>
+
+  <section class="fade-in">
+    <h2><i class="fas fa-boxes section-icon"></i> Nuestros Paquetes</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>BÁSICO</h3>
+        <ul>
+          <h2>Tu equipo se libera. Tu negocio avanza</h2>
+          <li>Reduce horas de trabajo manual</li>
+          <li>Respuesta instantánea al cliente</li>
+          <li>Automatización de reservas, agendas, respuestas y consulta</li>
+          <li>Ejecuta tareas con precisión sin depender de más personal</li>
+          <li>Hasta 2 agentes IA a elección (Agenets de nivel básico o medio)</li>
+          <li>Acceso a tu Centro de Control AVAIN</li>
+        </ul>
+        <button onclick="openWhatsApp()">Agenda una llamada</button>
+      </div>
+      <div class="card">
+        <h3>PRO</h3>
+        <ul>
+          <h1>Tu empresa ejecuta, crece y vende con inteligencia.</h1>
+          <li>Generación de leads en piloto automático</li>
+          <li>Toma decisiones informadas en tiempo real y ahorra horas clave</li>
+          <li> Hasta 3 agentes IA a elección (1 agente avanzado incluido)</li>
+          <li>Acceso a tu Centro de Control AVAIN</li>
+        </ul>
+        <button onclick="openWhatsApp()">Agenda una llamada</button>
+      </div>
+      <div class="card">
+        <h3>PREMIUM</h3>
+        <ul>
+          <h2>Tu negocio funciona incluso cuando tú no estas</h2>
+          <li>Marketing, ventas y análisis totalmente automatizados</li>
+          <li>Asistente personal que gestiona, responde y organiza</li>
+          <li>Hasta 4 agentes IA + 1 Agente experto</li>
+          <li>Acceso a tu Centro de Control AVAIN</li>
+        </ul>
+        <button onclick="openWhatsApp()">Agenda una llamada</button>
+      </div>
+      <div class="card">
+        <h3>PERSONALIZADO</h3>
+        <ul>
+          <li>Diseñado 100% a medida</li>
+          <li>Acceso completo a todos los agentes</li>
+          <li>Desarrollo exclusivo con arquitectura propia</li>
+          <li> Estrategia a medida + cualquier combinación de agentes según el reto del negocio</li>
+          <li>Consultoría directa contigo + soporte continuo</li>
+        </ul>
+        <button onclick="openWhatsApp()">Agenda una llamada</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUEVA SECCIÓN: Configurador de soluciones -->
+  <section class="fade-in">
+    <h2><i class="fas fa-cube section-icon"></i> Configura tu solución</h2>
+    <div class="solution-builder">
+      <p>Selecciona las áreas que quieres automatizar:</p>
+      
+      <div class="builder-options">
+        <div class="option-toggle" onclick="toggleOption(this)">Atención al cliente</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Ventas</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Marketing</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Operaciones</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Recursos Humanos</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Análisis de datos</div>
+      </div>
+      
+      <div class="solution-summary">
+        <p>Selecciona al menos una opción</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="asesoria" style="text-align: center; padding: 40px 20px;">
+    <p style="font-size: 18px; font-weight: bold; color: #0099ff;">
+      ¿No sabes cuál es el mejor para ti?
+    </p>
+    <p style="font-size: 16px; color: #cccccc;">
+      En la llamada analizamos tu negocio y te guiamos paso a paso hacia la mejor solución.
+    </p>
+  </section>
+
+  <section id="garantia" class="fade-in">
+    <h2><i class="fas fa-shield-alt section-icon"></i> Garantía</h2>
+    <div class="garantia-box">
+      <p>Si en 30 días no ves mejoras reales en tus procesos, automatizaciones o respuestas, te devolvemos tu dinero. Sin excusas.</p>
+    </div>
+  </section>
+
+  <section id="contacto" class="fade-in">
+    <h2><i class="fas fa-phone section-icon"></i> ¿Listo para empezar?</h2>
+    <p>¡Estamos listos para llevar tu negocio al siguiente nivel con IA! Contáctanos para agendar una reunión y comenzar a trabajar juntos.</p>
+    <button onclick="openWhatsApp()">Agendar llamada</button>
+    
+    <!-- Formulario de contacto añadido -->
+    <section style="max-width: 500px; margin: 40px auto; background: rgba(17, 17, 17, 0.8); padding: 25px; border-radius: 10px; border: 1px solid rgba(0, 102, 255, 0.3);">
+      <h3 style="margin-bottom: 20px; color: white;">O déjanos tus datos</h3>
+      <form action="https://formcarry.com/s/EzV3a2-Xeoc" method="POST" enctype="multipart/form-data">
+        
+        <div style="margin-bottom: 15px;">
+          <input type="text" name="name" placeholder="Tu nombre completo" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <input type="email" name="email" placeholder="Tu correo electrónico" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <textarea name="message" placeholder="Cuéntanos sobre tu proyecto" rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;"></textarea>
+        </div>
+    
+        <input type="hidden" name="_redirect" value="https://tudominio.com/gracias.html">
+    
+        <button type="submit" style="width: 100%; background-color: #0066ff; cursor: pointer; color: white; border: none; padding: 12px 25px; font-weight: bold; border-radius: 5px; font-size: 16px; transition: all 0.3s ease;">Enviar mensaje</button>
+      </form>
+    </section>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AVAIN. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- CHATBOT CON BOTONES -->
   <div class="chat-widget">
     <div class="chat-button" onclick="toggleChat()">
       <i class="fas fa-robot"></i>
@@ -359,19 +1084,87 @@
     </div>
   </div>
 
-  <!-- Botón scroll to top -->
+  <!-- Botón de scroll to top -->
   <div id="scroll-top">
     <i class="fas fa-arrow-up"></i>
   </div>
 
   <script>
-    // Mostrar/ocultar chat
+    // Toggle Menu Móvil
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+
+    // Abrir WhatsApp
+    function openWhatsApp() {
+      window.open("https://wa.me/593939975181?text=Hola,%20quisiera%20saber%20más%20sobre%20sus%20servicios%20de%20inteligencia%20artificial", "_blank");
+    }
+
+    // Scroll to top
+    document.getElementById('scroll-top').addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Animación al hacer scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in, .card').forEach(el => observer.observe(el));
+
+    // Animar las cards con un delay para que aparezcan secuencialmente
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        observer.observe(card);
+      }, index * 150);
+    });
+
+    // Efecto suave para los links de navegación
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+        
+        // Cerrar menú móvil si está abierto
+        if (window.innerWidth <= 768) {
+          document.getElementById('menu').classList.remove('active');
+        }
+      });
+    });
+
+    // Mostrar/ocultar botón de scroll to top
+    window.addEventListener('scroll', function() {
+      const scrollTop = document.getElementById('scroll-top');
+      if (window.pageYOffset > 300) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
+    });
+
+    // CHATBOT FUNCTIONS
     function toggleChat() {
       const chat = document.querySelector('.chat-container');
       chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Opciones del chatbot
     function selectOption(option) {
       const messages = document.getElementById('chat-messages');
       
@@ -406,16 +1199,16 @@
         let botText = '';
         switch(option) {
           case 'tiempo-implementacion':
-            botText = 'El tiempo de implementación varía según la solución, pero normalmente entre 2-6 semanas. ¿Te gustaría que evaluemos tu caso específico?';
+            botText = 'El tiempo de implementación varía según la solución:\n\n• Básico: 2-3 semanas\n• Pro: 3-4 semanas\n• Premium: 4-6 semanas\n\n¿Quieres que te recomiende el mejor para tu caso?';
             break;
           case 'como-funciona':
-            botText = 'Desarrollamos agentes de IA que se integran con tus sistemas actuales para automatizar procesos. Primero analizamos tus necesidades, luego implementamos la solución.';
+            botText = 'Nuestros agentes de IA se integran con tus sistemas para automatizar procesos:\n\n1. Analizamos tus necesidades\n2. Desarrollamos la solución\n3. Implementamos y capacitamos\n\n¿Te gustaría más detalles de algún paso?';
             break;
           case 'demo':
-            botText = 'Puedes ver demostraciones en nuestro sitio web o agendar una sesión personalizada. ¿Qué prefieres?';
+            botText = 'Tenemos varias opciones para mostrarte:\n\n1. Demo grabado (te envío el enlace)\n2. Sesión en vivo con un especialista\n\n¿Cuál prefieres?';
             break;
           case 'contactar':
-            botText = 'Para contactar a un asesor, puedes: \n1. Llenar el formulario de contacto \n2. Agendar una llamada \n3. Escribirnos directamente por WhatsApp. ¿Qué opción prefieres?';
+            botText = 'Puedes contactar a un asesor ahora mismo:\n\n1. Llenando el formulario de contacto\n2. Agendando una llamada\n3. Escribiéndonos por WhatsApp\n\n¿Qué opción te resulta más cómoda?';
             break;
         }
         
@@ -427,22 +1220,41 @@
       messages.scrollTop = messages.scrollHeight;
     }
 
-    // Scroll to top
-    window.addEventListener('scroll', function() {
-      const scrollBtn = document.getElementById('scroll-top');
-      if (window.pageYOffset > 300) {
-        scrollBtn.classList.add('active');
-      } else {
-        scrollBtn.classList.remove('active');
-      }
-    });
+    // ROI Calculator
+    function updateROI() {
+      const hours = document.getElementById('hours').value;
+      const employees = document.getElementById('employees').value;
+      const roi = (hours * employees * 30 * 0.5).toLocaleString();
+      
+      document.getElementById('roi-result').textContent = `$${roi}`;
+      document.getElementById('hours-value').textContent = hours;
+      document.getElementById('employees-value').textContent = employees;
+    }
 
-    document.getElementById('scroll-top').addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    // Solution Builder
+    function toggleOption(button) {
+      button.classList.toggle('active');
+      updateSolutionSummary();
+    }
+
+    function updateSolutionSummary() {
+      const selected = document.querySelectorAll('.option-toggle.active');
+      const summary = document.querySelector('.solution-summary');
+      
+      if (selected.length === 0) {
+        summary.innerHTML = '<p>Selecciona al menos una opción</p>';
+        return;
+      }
+      
+      let html = '<h3>Tu solución personalizada incluye:</h3><ul>';
+      
+      selected.forEach(option => {
+        html += `<li>${option.textContent}</li>`;
       });
-    });
+      
+      html += `</ul><button onclick="openWhatsApp()">Solicitar cotización</button>`;
+      summary.innerHTML = html;
+    }
 
     // Cerrar chat al hacer clic fuera
     document.addEventListener('click', function(event) {
@@ -452,6 +1264,20 @@
       if (!chatWidget.contains(event.target) && chatContainer.style.display === 'flex') {
         chatContainer.style.display = 'none';
       }
+    });
+
+    // Inicialización
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar ScrollReveal
+      ScrollReveal().reveal('.scrolly-step', {
+        delay: 200,
+        distance: '50px',
+        origin: 'bottom',
+        interval: 100
+      });
+      
+      // Actualizar ROI al cargar
+      updateROI();
     });
   </script>
 </body>
