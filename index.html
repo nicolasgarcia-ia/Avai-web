@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <!-- Añade esto en el <head> -->
-<script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-  <!-- Manteniendo los meta tags y enlaces existentes -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="AVAIN - Agencia especializada en soluciones de Inteligencia Artificial para empresas y proyectos. Optimizamos procesos, desarrollamos chatbots y creamos sistemas inteligentes personalizados.">
   <title>AVAIN - Agencia de Inteligencia Artificial</title>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/62b1b622b5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -33,257 +31,6 @@
       max-width: 1000px;
       margin: auto;
     }
-    <!-- Añade después del footer, antes del script -->
-<div class="chat-widget">
-  <div class="chat-button" onclick="toggleChat()">
-    <i class="fas fa-robot"></i>
-  </div>
-  <div class="chat-container">
-    <div class="chat-header">
-      <span>Asistente AVAIN</span>
-      <span class="chat-close" onclick="toggleChat()">×</span>
-    </div>
-    <div class="chat-messages" id="chat-messages">
-      <div class="message bot">¡Hola! Soy AVA, tu asistente de IA. ¿En qué puedo ayudarte hoy?</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" placeholder="Escribe tu mensaje..." id="chat-input">
-      <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-    </div>
-  </div>
-</div>
-
-<!-- Añade estos estilos al CSS existente -->
-<style>
-  /* Chatbot */
-  .chat-widget {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  .chat-button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff2200, #cc0000);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-    transition: all 0.3s ease;
-  }
-  
-  .chat-button:hover {
-    transform: scale(1.1);
-  }
-  
-  .chat-container {
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    width: 300px;
-    height: 400px;
-    background: rgba(17, 17, 17, 0.95);
-    border-radius: 15px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-    border: 1px solid red;
-  }
-  
-  .chat-header {
-    padding: 15px;
-    background: linear-gradient(135deg, #ff2200, #cc0000);
-    color: white;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .chat-close {
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .chat-messages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .chat-input {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  
-  .chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.1);
-    color: white;
-  }
-  
-  .chat-input button {
-    background: red;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .message {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 80%;
-  }
-  
-  .message.bot {
-    background: rgba(255, 0, 0, 0.2);
-    align-self: flex-start;
-  }
-  
-  .message.user {
-    background: rgba(255,255,255,0.1);
-    align-self: flex-end;
-    margin-left: auto;
-  }
-
-  /* Scrollytelling */
-  .scrolly-step {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-    margin-bottom: 40px;
-  }
-  
-  .scrolly-step.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ROI Calculator */
-  .roi-calculator {
-    background: rgba(17, 17, 17, 0.8);
-    border-radius: 15px;
-    padding: 25px;
-    border: 1px solid red;
-    margin-top: 30px;
-  }
-  
-  .slider-container {
-    margin-bottom: 15px;
-  }
-  
-  .slider-container label {
-    display: block;
-    margin-bottom: 5px;
-    color: #fff;
-    font-weight: 500;
-  }
-  
-  .slider-container input[type="range"] {
-    width: 100%;
-    height: 5px;
-    -webkit-appearance: none;
-    background: linear-gradient(to right, #ff2200, #cc0000);
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  .slider-container input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #fff;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-  }
-  
-  .slider-values {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #ccc;
-  }
-  
-  .result-container {
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(255, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .result-value {
-    font-size: 28px;
-    font-weight: bold;
-    color: red;
-    margin: 10px 0;
-  }
-
-  /* Configurador */
-  .solution-builder {
-    background: rgba(17, 17, 17, 0.8);
-    border-radius: 15px;
-    padding: 25px;
-    border: 1px solid red;
-    margin-top: 30px;
-  }
-  
-  .builder-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .option-toggle {
-    background: rgba(0,0,0,0.5);
-    border: 1px solid rgba(255, 0, 0, 0.3);
-    padding: 10px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  
-  .option-toggle.active {
-    background: red;
-    border-color: red;
-  }
-  
-  .solution-summary {
-    padding: 15px;
-    background: rgba(255, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-
-  /* Micro-interacciones */
-  .hover-grow {
-    transition: transform 0.3s ease;
-  }
-  
-  .hover-grow:hover {
-    transform: scale(1.03);
-  }
-</style>
 
     /* Header mejorado con imagen de fondo y overlay */
     header {
@@ -824,6 +571,236 @@
         text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
       }
     }
+
+    /* NUEVOS ESTILOS AÑADIDOS */
+    /* Chatbot */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+    
+    .chat-button {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff2200, #cc0000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    .chat-button:hover {
+      transform: scale(1.1);
+    }
+    
+    .chat-container {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 300px;
+      height: 400px;
+      background: rgba(17, 17, 17, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid red;
+    }
+    
+    .chat-header {
+      padding: 15px;
+      background: linear-gradient(135deg, #ff2200, #cc0000);
+      color: white;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .chat-close {
+      cursor: pointer;
+      font-size: 18px;
+    }
+    
+    .chat-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .chat-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+    
+    .chat-input button {
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    
+    .message {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+    
+    .message.bot {
+      background: rgba(255, 0, 0, 0.2);
+      align-self: flex-start;
+    }
+    
+    .message.user {
+      background: rgba(255,255,255,0.1);
+      align-self: flex-end;
+      margin-left: auto;
+    }
+
+    /* Scrollytelling */
+    .scrolly-step {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease;
+      margin-bottom: 40px;
+    }
+    
+    .scrolly-step.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ROI Calculator */
+    .roi-calculator {
+      background: rgba(17, 17, 17, 0.8);
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid red;
+      margin-top: 30px;
+    }
+    
+    .slider-container {
+      margin-bottom: 15px;
+    }
+    
+    .slider-container label {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+      font-weight: 500;
+    }
+    
+    .slider-container input[type="range"] {
+      width: 100%;
+      height: 5px;
+      -webkit-appearance: none;
+      background: linear-gradient(to right, #ff2200, #cc0000);
+      border-radius: 5px;
+      outline: none;
+    }
+    
+    .slider-container input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    
+    .slider-values {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #ccc;
+    }
+    
+    .result-container {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    
+    .result-value {
+      font-size: 28px;
+      font-weight: bold;
+      color: red;
+      margin: 10px 0;
+    }
+
+    /* Configurador */
+    .solution-builder {
+      background: rgba(17, 17, 17, 0.8);
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid red;
+      margin-top: 30px;
+    }
+    
+    .builder-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .option-toggle {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid rgba(255, 0, 0, 0.3);
+      padding: 10px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .option-toggle.active {
+      background: red;
+      border-color: red;
+    }
+    
+    .solution-summary {
+      padding: 15px;
+      background: rgba(255, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    /* Micro-interacciones */
+    .hover-grow {
+      transition: transform 0.3s ease;
+    }
+    
+    .hover-grow:hover {
+      transform: scale(1.03);
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='black'/%3E%3Cpath d='M10 8 L16 8 L22 24 L16 24 L10 8 Z' fill='white'/%3E%3Cpath d='M20 8 L20 24' stroke='red' stroke-width='4'/%3E%3C/svg%3E">
 </head>
@@ -889,6 +866,36 @@
     </ul>
   </section>
 
+  <!-- NUEVA SECCIÓN: Calculadora de ROI -->
+  <section class="fade-in">
+    <h2><i class="fas fa-calculator section-icon"></i> Calcula tu ROI</h2>
+    <div class="roi-calculator">
+      <div class="slider-container">
+        <label>Horas diarias perdidas en tareas repetitivas: <span id="hours-value">4</span></label>
+        <input type="range" id="hours" min="1" max="10" value="4" oninput="updateROI()">
+        <div class="slider-values">
+          <span>1h</span>
+          <span>10h</span>
+        </div>
+      </div>
+      
+      <div class="slider-container">
+        <label>Empleados afectados: <span id="employees-value">3</span></label>
+        <input type="range" id="employees" min="1" max="20" value="3" oninput="updateROI()">
+        <div class="slider-values">
+          <span>1</span>
+          <span>20</span>
+        </div>
+      </div>
+      
+      <div class="result-container">
+        <p>Ahorro mensual estimado:</p>
+        <div class="result-value" id="roi-result">$1,800</div>
+        <small>Basado en un costo promedio de $30/hora</small>
+      </div>
+    </div>
+  </section>
+
   <section id="sobre-nosotros" class="fade-in">
     <h2><i class="fas fa-rocket section-icon"></i> Sobre AVAIN</h2>
     <p>Somos una agencia creada con un objetivo: convertir empresas normales en empresas del futuro. Combinamos lo técnico, lo creativo y lo estratégico para transformar tu operación con IA.</p>
@@ -946,6 +953,27 @@
     </div>
   </section>
 
+  <!-- NUEVA SECCIÓN: Configurador de soluciones -->
+  <section class="fade-in">
+    <h2><i class="fas fa-cube section-icon"></i> Configura tu solución</h2>
+    <div class="solution-builder">
+      <p>Selecciona las áreas que quieres automatizar:</p>
+      
+      <div class="builder-options">
+        <div class="option-toggle" onclick="toggleOption(this)">Atención al cliente</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Ventas</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Marketing</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Operaciones</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Recursos Humanos</div>
+        <div class="option-toggle" onclick="toggleOption(this)">Análisis de datos</div>
+      </div>
+      
+      <div class="solution-summary">
+        <p>Selecciona al menos una opción</p>
+      </div>
+    </div>
+  </section>
+
   <section id="asesoria" style="text-align: center; padding: 40px 20px;">
     <p style="font-size: 18px; font-weight: bold; color: #ff2c2c;">
       ¿No sabes cuál es el mejor para ti?
@@ -989,13 +1017,31 @@
         <button type="submit" style="width: 100%; background-color: red; cursor: pointer; color: white; border: none; padding: 12px 25px; font-weight: bold; border-radius: 5px; font-size: 16px; transition: all 0.3s ease;">Enviar mensaje</button>
       </form>
     </section>
-    
+  </section>
 
   <footer>
     <p>&copy; 2025 AVAIN. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botón WhatsApp eliminado -->
+  <!-- NUEVO: Chatbot -->
+  <div class="chat-widget">
+    <div class="chat-button" onclick="toggleChat()">
+      <i class="fas fa-robot"></i>
+    </div>
+    <div class="chat-container">
+      <div class="chat-header">
+        <span>Asistente AVAIN</span>
+        <span class="chat-close" onclick="toggleChat()">×</span>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message bot">¡Hola! Soy AVA, tu asistente de IA. ¿En qué puedo ayudarte hoy?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Escribe tu mensaje..." id="chat-input">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
 
   <!-- Botón de scroll to top mejorado con animación -->
   <div id="scroll-top">
@@ -1061,7 +1107,107 @@
         }
       });
     });
-    
+
+    // NUEVAS FUNCIONES AÑADIDAS
+    // Chatbot
+    function toggleChat() {
+      const chat = document.querySelector('.chat-container');
+      chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const messages = document.getElementById('chat-messages');
+      
+      if (input.value.trim() === '') return;
+      
+      // Mensaje del usuario
+      const userMsg = document.createElement('div');
+      userMsg.className = 'message user';
+      userMsg.textContent = input.value;
+      messages.appendChild(userMsg);
+      
+      // Respuesta del bot (simulada)
+      setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'message bot';
+        
+        const responses = [
+          "Nuestros agentes de IA pueden ayudarte con eso. ¿Quieres que te explique cómo?",
+          "Esa es una excelente pregunta. Nuestro paquete PRO incluye soluciones para ese caso.",
+          "Podemos programar una llamada para analizar tu caso específico.",
+          "Ese requerimiento lo cubre nuestro paquete PREMIUM con agentes especializados."
+        ];
+        
+        botMsg.textContent = responses[Math.floor(Math.random() * responses.length)];
+        messages.appendChild(botMsg);
+        messages.scrollTop = messages.scrollHeight;
+      }, 1000);
+      
+      input.value = '';
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    // ROI Calculator
+    function updateROI() {
+      const hours = document.getElementById('hours').value;
+      const employees = document.getElementById('employees').value;
+      const roi = (hours * employees * 30 * 0.5).toLocaleString();
+      
+      document.getElementById('roi-result').textContent = `$${roi}`;
+      document.getElementById('hours-value').textContent = hours;
+      document.getElementById('employees-value').textContent = employees;
+    }
+
+    // Solution Builder
+    function toggleOption(button) {
+      button.classList.toggle('active');
+      updateSolutionSummary();
+    }
+
+    function updateSolutionSummary() {
+      const selected = document.querySelectorAll('.option-toggle.active');
+      const summary = document.querySelector('.solution-summary');
+      
+      if (selected.length === 0) {
+        summary.innerHTML = '<p>Selecciona al menos una opción</p>';
+        return;
+      }
+      
+      let html = '<h3>Tu solución personalizada incluye:</h3><ul>';
+      
+      selected.forEach(option => {
+        html += `<li>${option.textContent}</li>`;
+      });
+      
+      html += `</ul><button onclick="openWhatsApp()">Solicitar cotización</button>`;
+      summary.innerHTML = html;
+    }
+
+    // Scrollytelling
+    ScrollReveal().reveal('.scrolly-step', {
+      delay: 200,
+      distance: '50px',
+      origin: 'bottom',
+      interval: 100
+    });
+
+    // Parallax
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+      
+      parallaxElements.forEach(el => {
+        const speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.3;
+        el.style.transform = `translateY(${scrollPosition * speed}px)`;
+      });
+    });
+
+    // Inicialización
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('header').setAttribute('data-parallax', '');
+      document.querySelector('header').setAttribute('data-parallax-speed', '0.5');
+    });
   </script>
 </body>
 </html>
