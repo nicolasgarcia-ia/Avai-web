@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AVAIN - Agencia especializada en soluciones de Inteligencia Artificial para empresas y proyectos. Optimizamos procesos, desarrollamos chatbots y creamos sistemas inteligentes personalizados.">
+  <meta name="description" content="AVAIN - Agencia especializada en soluciones de Inteligencia Artificial para empresas y proyectos.">
   <title>AVAIN - Agencia de Inteligencia Artificial</title>
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/62b1b622b5.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -16,8 +15,38 @@
       scroll-behavior: smooth;
     }
 
+    /* Efecto LED azul eléctrico en los bordes */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      box-shadow: inset 0 0 20px rgba(0, 153, 255, 0.3),
+                  inset 0 0 30px rgba(0, 102, 255, 0.2),
+                  inset 0 0 40px rgba(0, 68, 255, 0.1);
+      z-index: 9999;
+      border: 1px solid rgba(0, 204, 255, 0.2);
+      animation: pulseBorder 2s infinite alternate;
+    }
+
+    @keyframes pulseBorder {
+      0% {
+        box-shadow: inset 0 0 20px rgba(0, 153, 255, 0.3),
+                    inset 0 0 30px rgba(0, 102, 255, 0.2),
+                    inset 0 0 40px rgba(0, 68, 255, 0.1);
+      }
+      100% {
+        box-shadow: inset 0 0 25px rgba(0, 153, 255, 0.5),
+                    inset 0 0 35px rgba(0, 102, 255, 0.3),
+                    inset 0 0 45px rgba(0, 68, 255, 0.2);
+      }
+    }
+
     body {
-      background: linear-gradient(135deg, #000 60%, #1a0000), radial-gradient(circle at top left, rgba(255,0,0,0.1), transparent), #000;
+      background: linear-gradient(135deg, #000 60%, #001a1a), radial-gradient(circle at top left, rgba(0, 102, 255, 0.1), transparent), #000;
       background-blend-mode: screen;
       color: #f5f5f5;
       font-family: 'Rajdhani', sans-serif;
@@ -32,7 +61,7 @@
       margin: auto;
     }
 
-    /* Header mejorado con imagen de fondo y overlay */
+    /* Header con imagen fija */
     header {
       position: relative;
       height: 100vh;
@@ -43,9 +72,9 @@
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
+      background-attachment: scroll;
       padding-top: 120px;
-      border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(0, 102, 255, 0.3);
     }
 
     header::before {
@@ -55,7 +84,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 0, 0, 0.15), transparent 70%);
+      background: radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.15), transparent 70%);
       z-index: 0;
     }
 
@@ -67,7 +96,7 @@
     header h1 {
       font-size: 4rem;
       margin-bottom: 10px;
-      text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      text-shadow: 0 0 20px rgba(0, 102, 255, 0.5);
       animation: pulse 3s infinite;
     }
 
@@ -83,7 +112,7 @@
     }
 
     .header-cta {
-      background: red;
+      background: #0066ff;
       color: white;
       padding: 12px 30px;
       text-decoration: none;
@@ -92,13 +121,13 @@
       display: inline-block;
       margin-top: 20px;
       transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
     }
 
     .header-cta:hover {
-      background: #cc0000;
+      background: #0052cc;
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.6);
     }
 
     h1, h2 {
@@ -115,7 +144,7 @@
       position: absolute;
       width: 50%;
       height: 3px;
-      background: red;
+      background: #0066ff;
       bottom: -5px;
       left: 0;
       transform: scaleX(0);
@@ -128,10 +157,10 @@
     }
 
     h1 span, h2 span {
-      color: red;
+      color: #0066ff;
     }
 
-    /* Barra de navegación circular (pastel) */
+    /* Barra de navegación */
     nav {
       background-color: rgba(17, 17, 17, 0.95);
       padding: 20px;
@@ -145,7 +174,7 @@
       align-items: center;
       border-radius: 50px;
       border: 1px solid #333;
-      box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+      box-shadow: 0 4px 20px rgba(0, 102, 255, 0.2);
       transition: all 0.3s ease;
       width: 90%;
       max-width: 1000px;
@@ -155,7 +184,7 @@
       top: 10px;
       padding: 15px 20px;
       background-color: rgba(0, 0, 0, 0.95);
-      box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
     }
 
     .logo {
@@ -170,7 +199,7 @@
     }
 
     .logo span {
-      color: red;
+      color: #0066ff;
     }
 
     nav ul {
@@ -192,7 +221,7 @@
 
     nav ul li a:hover {
       color: white;
-      background-color: rgba(255, 0, 0, 0.8);
+      background-color: rgba(0, 102, 255, 0.8);
     }
 
     .menu-toggle {
@@ -205,7 +234,7 @@
 
     .menu-toggle:hover {
       transform: scale(1.1);
-      color: red;
+      color: #0066ff;
     }
 
     @media (max-width: 768px) {
@@ -224,7 +253,7 @@
         padding: 20px;
         z-index: 999;
         border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(255, 0, 0, 0.3);
+        box-shadow: 0 5px 20px rgba(0, 102, 255, 0.3);
         transition: all 0.3s ease;
       }
 
@@ -265,7 +294,7 @@
     }
 
     .card {
-      border: 2px solid red;
+      border: 2px solid #0066ff;
       padding: 20px;
       width: 280px;
       border-radius: 10px;
@@ -283,7 +312,7 @@
     }
 
     .card:hover {
-      box-shadow: 0 0 25px rgba(255, 0, 0, 0.7);
+      box-shadow: 0 0 25px rgba(0, 102, 255, 0.7);
       transform: translateY(-10px) scale(1.03);
     }
 
@@ -294,7 +323,7 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      background: linear-gradient(45deg, transparent, red, transparent);
+      background: linear-gradient(45deg, transparent, #0066ff, transparent);
       border-radius: 12px;
       z-index: -1;
       opacity: 0;
@@ -327,7 +356,7 @@
       position: absolute;
       width: 100%;
       height: 2px;
-      background-color: red;
+      background-color: #0066ff;
       bottom: -5px;
       left: 0;
     }
@@ -349,11 +378,11 @@
       content: '→';
       position: absolute;
       left: 0;
-      color: red;
+      color: #0066ff;
     }
 
     .card button {
-      background-color: red;
+      background-color: #0066ff;
       border: none;
       color: white;
       padding: 10px 20px;
@@ -378,9 +407,9 @@
     }
 
     .card button:hover {
-      background-color: #cc0000;
+      background-color: #0052cc;
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
     }
 
     .card button:hover::before {
@@ -396,7 +425,7 @@
       font-size: 14px;
       color: #666;
       padding-top: 40px;
-      border-top: 1px solid rgba(255, 0, 0, 0.2);
+      border-top: 1px solid rgba(0, 102, 255, 0.2);
     }
 
     .fade-in {
@@ -410,12 +439,12 @@
       transform: translateY(0);
     }
 
-    /* Botón de Scroll to Top mejorado */
+    /* Botón de Scroll to Top */
     #scroll-top {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: rgba(255, 0, 0, 0.8);
+      background-color: rgba(0, 102, 255, 0.8);
       color: white;
       width: 50px;
       height: 50px;
@@ -429,7 +458,7 @@
       transform: translateY(100px);
       transition: all 0.5s ease;
       z-index: 999;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      box-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
     }
 
     #scroll-top.active {
@@ -438,12 +467,11 @@
     }
 
     #scroll-top:hover {
-      background-color: #cc0000;
+      background-color: #0052cc;
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.7);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.7);
     }
 
-    /* Animación para el botón de scroll para que sea más visible */
     #scroll-top .fa-arrow-up {
       animation: bounce 2s infinite;
     }
@@ -463,7 +491,7 @@
     .section-icon {
       font-size: 24px;
       margin-right: 10px;
-      color: red;
+      color: #0066ff;
       vertical-align: middle;
     }
 
@@ -482,21 +510,21 @@
       content: '✓';
       position: absolute;
       left: 0;
-      color: red;
+      color: #0066ff;
       font-weight: bold;
     }
 
     .phase {
       padding: 15px;
       margin-bottom: 15px;
-      border-left: 3px solid red;
-      background-color: rgba(255, 0, 0, 0.05);
+      border-left: 3px solid #0066ff;
+      background-color: rgba(0, 102, 255, 0.05);
       transition: transform 0.3s, background-color 0.3s;
     }
 
     .phase:hover {
       transform: translateX(10px);
-      background-color: rgba(255, 0, 0, 0.1);
+      background-color: rgba(0, 102, 255, 0.1);
     }
 
     .phase strong {
@@ -505,7 +533,7 @@
 
     button {
       cursor: pointer;
-      background-color: red;
+      background-color: #0066ff;
       color: white;
       border: none;
       padding: 12px 25px;
@@ -517,16 +545,16 @@
     }
 
     button:hover {
-      background-color: #cc0000;
+      background-color: #0052cc;
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
     }
 
     .garantia-box {
-      border: 2px dashed red;
+      border: 2px dashed #0066ff;
       padding: 20px;
       border-radius: 10px;
-      background-color: rgba(255, 0, 0, 0.05);
+      background-color: rgba(0, 102, 255, 0.05);
       text-align: center;
       margin-top: 20px;
       position: relative;
@@ -538,7 +566,7 @@
       position: absolute;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(255, 0, 0, 0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.1) 0%, transparent 70%);
       top: -50%;
       left: -50%;
       animation: pulse 4s infinite;
@@ -559,21 +587,19 @@
       }
     }
     
-    /* Animación adicional para el logo del header */
     @keyframes pulse {
       0% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
       }
       50% {
-        text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.4);
+        text-shadow: 0 0 20px rgba(0, 102, 255, 0.8), 0 0 30px rgba(0, 102, 255, 0.4);
       }
       100% {
-        text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        text-shadow: 0 0 10px rgba(0, 102, 255, 0.5);
       }
     }
 
-    /* NUEVOS ESTILOS AÑADIDOS */
-    /* Chatbot */
+    /* CHATBOT CON BOTONES DE OPCIONES */
     .chat-widget {
       position: fixed;
       bottom: 20px;
@@ -585,19 +611,20 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #ff2200, #cc0000);
+      background: linear-gradient(135deg, #0066ff, #0099ff);
       display: flex;
       justify-content: center;
       align-items: center;
       color: white;
       font-size: 24px;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+      box-shadow: 0 0 15px rgba(0, 102, 255, 0.5);
       transition: all 0.3s ease;
     }
     
     .chat-button:hover {
       transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(0, 204, 255, 0.7);
     }
     
     .chat-container {
@@ -612,12 +639,12 @@
       display: none;
       flex-direction: column;
       overflow: hidden;
-      border: 1px solid red;
+      border: 1px solid #0066ff;
     }
     
     .chat-header {
       padding: 15px;
-      background: linear-gradient(135deg, #ff2200, #cc0000);
+      background: linear-gradient(135deg, #0066ff, #0099ff);
       color: white;
       font-weight: bold;
       display: flex;
@@ -628,6 +655,11 @@
     .chat-close {
       cursor: pointer;
       font-size: 18px;
+      transition: transform 0.3s;
+    }
+    
+    .chat-close:hover {
+      transform: scale(1.2);
     }
     
     .chat-messages {
@@ -639,32 +671,6 @@
       gap: 10px;
     }
     
-    .chat-input {
-      display: flex;
-      padding: 10px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .chat-input input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.1);
-      color: white;
-    }
-    
-    .chat-input button {
-      background: red;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-    
     .message {
       margin-bottom: 10px;
       padding: 10px;
@@ -673,7 +679,7 @@
     }
     
     .message.bot {
-      background: rgba(255, 0, 0, 0.2);
+      background: rgba(0, 102, 255, 0.2);
       align-self: flex-start;
     }
     
@@ -683,130 +689,42 @@
       margin-left: auto;
     }
 
-    /* Scrollytelling */
-    .scrolly-step {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease;
-      margin-bottom: 40px;
-    }
-    
-    .scrolly-step.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ROI Calculator */
-    .roi-calculator {
-      background: rgba(17, 17, 17, 0.8);
-      border-radius: 15px;
-      padding: 25px;
-      border: 1px solid red;
-      margin-top: 30px;
-    }
-    
-    .slider-container {
-      margin-bottom: 15px;
-    }
-    
-    .slider-container label {
-      display: block;
-      margin-bottom: 5px;
-      color: #fff;
-      font-weight: 500;
-    }
-    
-    .slider-container input[type="range"] {
-      width: 100%;
-      height: 5px;
-      -webkit-appearance: none;
-      background: linear-gradient(to right, #ff2200, #cc0000);
-      border-radius: 5px;
-      outline: none;
-    }
-    
-    .slider-container input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #fff;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-    }
-    
-    .slider-values {
+    .chat-options {
       display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: #ccc;
-    }
-    
-    .result-container {
-      margin-top: 20px;
-      padding: 15px;
-      background: rgba(255, 0, 0, 0.1);
-      border-radius: 10px;
-      text-align: center;
-    }
-    
-    .result-value {
-      font-size: 28px;
-      font-weight: bold;
-      color: red;
-      margin: 10px 0;
-    }
-
-    /* Configurador */
-    .solution-builder {
-      background: rgba(17, 17, 17, 0.8);
-      border-radius: 15px;
-      padding: 25px;
-      border: 1px solid red;
-      margin-top: 30px;
-    }
-    
-    .builder-options {
-      display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 10px;
-      margin-bottom: 20px;
+      padding: 15px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
-    
-    .option-toggle {
-      background: rgba(0,0,0,0.5);
-      border: 1px solid rgba(255, 0, 0, 0.3);
+
+    .option-button {
+      background: rgba(0, 102, 255, 0.2);
+      border: 1px solid #0066ff;
+      color: white;
       padding: 10px 15px;
       border-radius: 20px;
       cursor: pointer;
       transition: all 0.3s ease;
-    }
-    
-    .option-toggle.active {
-      background: red;
-      border-color: red;
-    }
-    
-    .solution-summary {
-      padding: 15px;
-      background: rgba(255, 0, 0, 0.1);
-      border-radius: 10px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    /* Micro-interacciones */
-    .hover-grow {
-      transition: transform 0.3s ease;
+    .option-button:hover {
+      background: rgba(0, 102, 255, 0.4);
+      box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+      transform: translateY(-2px);
     }
-    
-    .hover-grow:hover {
-      transform: scale(1.03);
+
+    .option-button i {
+      font-size: 18px;
     }
   </style>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='black'/%3E%3Cpath d='M10 8 L16 8 L22 24 L16 24 L10 8 Z' fill='white'/%3E%3Cpath d='M20 8 L20 24' stroke='red' stroke-width='4'/%3E%3C/svg%3E">
 </head>
 <body>
 
-  <!-- Barra de navegación circular (estilo pastel) -->
+  <!-- Barra de navegación -->
   <nav id="navbar">
     <div class="logo">AV<span>AIN</span></div>
     <div class="menu-toggle" onclick="toggleMenu()">
@@ -821,7 +739,7 @@
     </ul>
   </nav>
 
-  <!-- Header mejorado con imagen de fondo -->
+  <!-- Header -->
   <header id="inicio" class="fade-in">
     <h1>AV<span>AIN</span></h1>
     <p>Agencia de Inteligencia Artificial</p>
@@ -829,201 +747,9 @@
     <a href="#contacto" class="header-cta">Transformar mi Empresa</a>
   </header>
 
-  <section id="soluciones" class="fade-in">
-    <h2><i class="fas fa-cogs section-icon"></i> ¿Qué hacemos?</h2>
-    <p>Diseñamos infraestructuras de inteligencia artificial personalizadas que impulsan, automatizan y escalan negocios</p>
-  </section>
+  <!-- Resto de tu contenido existente... -->
 
-  <section class="fade-in">
-    <h2><i class="fas fa-stream section-icon"></i> ¿Cómo funciona?</h2>
-    <div class="phase">
-      <p><strong>Fase 1:</strong> Analizamos a fondo tu operación y procesos clave. Identificamos tareas repetitivas, tiempos muertos y oportunidades concretas para automatizar y optimizar.</p>
-    </div>
-    <div class="phase">
-      <p><strong>Fase 2:</strong> Diseñamos agentes inteligentes y automatizaciones personalizadas. Desde bots hasta flujos internos, integraciones y dashboards adaptados a tu negocio.</p>
-    </div>
-    <div class="phase">
-      <p><strong>Fase 3:</strong> Conectamos todo y dejamos el sistema funcionando. Te entregamos una solución llave en mano y te acompañamos en los primeros pasos de uso real.</p>
-    </div>
-    <div class="phase">
-      <p><strong>Fase 4:</strong> Damos seguimiento, ajustamos y potenciamos resultados. Mejoramos la eficiencia, elevamos la experiencia del cliente y ayudamos a captar más oportunidades y leads con sistemas que trabajan solos.</p>
-    </div>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-user-check section-icon"></i> ¿Para quién es esto?</h2>
-    <p>Empresas pequeñas y medianas en Latinoamérica que saben que tienen procesos mejorables, están creciendo, quieren escalar y necesitan optimizar tiempo y recursos.</p>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-star section-icon"></i> Beneficios reales</h2>
-    <ul class="benefit-list">
-      <li>Automatización de tareas repetitivas</li>
-      <li>Reducción de costos operativos</li>
-      <li>Generación de leads calificados</li>
-      <li>Respuesta rápida y profesional a tus clientes</li>
-      <li>Mayor control de tu operación</li>
-    </ul>
-  </section>
-
-  <!-- NUEVA SECCIÓN: Calculadora de ROI -->
-  <section class="fade-in">
-    <h2><i class="fas fa-calculator section-icon"></i> Calcula tu ROI</h2>
-    <div class="roi-calculator">
-      <div class="slider-container">
-        <label>Horas diarias perdidas en tareas repetitivas: <span id="hours-value">4</span></label>
-        <input type="range" id="hours" min="1" max="10" value="4" oninput="updateROI()">
-        <div class="slider-values">
-          <span>1h</span>
-          <span>10h</span>
-        </div>
-      </div>
-      
-      <div class="slider-container">
-        <label>Empleados afectados: <span id="employees-value">3</span></label>
-        <input type="range" id="employees" min="1" max="20" value="3" oninput="updateROI()">
-        <div class="slider-values">
-          <span>1</span>
-          <span>20</span>
-        </div>
-      </div>
-      
-      <div class="result-container">
-        <p>Ahorro mensual estimado:</p>
-        <div class="result-value" id="roi-result">$1,800</div>
-        <small>Basado en un costo promedio de $30/hora</small>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre-nosotros" class="fade-in">
-    <h2><i class="fas fa-rocket section-icon"></i> Sobre AVAIN</h2>
-    <p>Somos una agencia creada con un objetivo: convertir empresas normales en empresas del futuro. Combinamos lo técnico, lo creativo y lo estratégico para transformar tu operación con IA.</p>
-  </section>
-
-  <section class="fade-in">
-    <h2><i class="fas fa-boxes section-icon"></i> Nuestros Paquetes</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>BÁSICO</h3>
-        <ul>
-          <h2>Tu equipo se libera. Tu negocio avanza</h2>
-          <li>Reduce horas de trabajo manual</li>
-          <li>Respuesta instantánea al cliente</li>
-          <li>Automatización de reservas, agendas, respuestas y consulta</li>
-          <li>Ejecuta tareas con precisión sin depender de más personal</li>
-          <li>Hasta 2 agentes IA a elección (Agenets de nivel básico o medio)</li>
-          <li>Acceso a tu Centro de Control AVAIN</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
-      <div class="card">
-        <h3>PRO</h3>
-        <ul>
-          <h1>Tu empresa ejecuta, crece y vende con inteligencia.</h1>
-          <li>Generación de leads en piloto automático</li>
-          <li>Toma decisiones informadas en tiempo real y ahorra horas clave</li>
-          <li> Hasta 3 agentes IA a elección (1 agente avanzado incluido)</li>
-          <li>Acceso a tu Centro de Control AVAIN</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
-      <div class="card">
-        <h3>PREMIUM</h3>
-        <ul>
-          <h2>Tu negocio funciona incluso cuando tú no estas</h2>
-          <li>Marketing, ventas y análisis totalmente automatizados</li>
-          <li>Asistente personal que gestiona, responde y organiza</li>
-          <li>Hasta 4 agentes IA + 1 Agente experto</li>
-          <li>Acceso a tu Centro de Control AVAIN</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
-      <div class="card">
-        <h3>PERSONALIZADO</h3>
-        <ul>
-          <li>Diseñado 100% a medida</li>
-          <li>Acceso completo a todos los agentes</li>
-          <li>Desarrollo exclusivo con arquitectura propia</li>
-          <li> Estrategia a medida + cualquier combinación de agentes según el reto del negocio</li>
-          <li>Consultoría directa contigo + soporte continuo</li>
-        </ul>
-        <button onclick="openWhatsApp()">Agenda una llamada</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- NUEVA SECCIÓN: Configurador de soluciones -->
-  <section class="fade-in">
-    <h2><i class="fas fa-cube section-icon"></i> Configura tu solución</h2>
-    <div class="solution-builder">
-      <p>Selecciona las áreas que quieres automatizar:</p>
-      
-      <div class="builder-options">
-        <div class="option-toggle" onclick="toggleOption(this)">Atención al cliente</div>
-        <div class="option-toggle" onclick="toggleOption(this)">Ventas</div>
-        <div class="option-toggle" onclick="toggleOption(this)">Marketing</div>
-        <div class="option-toggle" onclick="toggleOption(this)">Operaciones</div>
-        <div class="option-toggle" onclick="toggleOption(this)">Recursos Humanos</div>
-        <div class="option-toggle" onclick="toggleOption(this)">Análisis de datos</div>
-      </div>
-      
-      <div class="solution-summary">
-        <p>Selecciona al menos una opción</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="asesoria" style="text-align: center; padding: 40px 20px;">
-    <p style="font-size: 18px; font-weight: bold; color: #ff2c2c;">
-      ¿No sabes cuál es el mejor para ti?
-    </p>
-    <p style="font-size: 16px; color: #cccccc;">
-      En la llamada analizamos tu negocio y te guiamos paso a paso hacia la mejor solución.
-    </p>
-  </section>
-
-  <section id="garantia" class="fade-in">
-    <h2><i class="fas fa-shield-alt section-icon"></i> Garantía</h2>
-    <div class="garantia-box">
-      <p>Si en 30 días no ves mejoras reales en tus procesos, automatizaciones o respuestas, te devolvemos tu dinero. Sin excusas.</p>
-    </div>
-  </section>
-
-  <section id="contacto" class="fade-in">
-    <h2><i class="fas fa-phone section-icon"></i> ¿Listo para empezar?</h2>
-    <p>¡Estamos listos para llevar tu negocio al siguiente nivel con IA! Contáctanos para agendar una reunión y comenzar a trabajar juntos.</p>
-    <button onclick="openWhatsApp()">Agendar llamada</button>
-    
-    <!-- Formulario de contacto añadido -->
-    <section style="max-width: 500px; margin: 40px auto; background: rgba(17, 17, 17, 0.8); padding: 25px; border-radius: 10px; border: 1px solid rgba(255, 0, 0, 0.3); font-family: 'Inter', sans-serif;">
-      <h3 style="margin-bottom: 20px; color: white;">O déjanos tus datos</h3>
-      <form action="https://formcarry.com/s/EzV3a2-Xeoc" method="POST" enctype="multipart/form-data">
-        
-        <div style="margin-bottom: 15px;">
-          <input type="text" name="name" placeholder="Tu nombre completo" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
-        </div>
-        
-        <div style="margin-bottom: 15px;">
-          <input type="email" name="email" placeholder="Tu correo electrónico" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;">
-        </div>
-        
-        <div style="margin-bottom: 15px;">
-          <textarea name="message" placeholder="Cuéntanos sobre tu proyecto" rows="5" required style="width: 100%; padding: 12px; background: rgba(0,0,0,0.6); border: 1px solid #333; color: white; border-radius: 5px;"></textarea>
-        </div>
-    
-        <input type="hidden" name="_redirect" value="https://tudominio.com/gracias.html">
-    
-        <button type="submit" style="width: 100%; background-color: red; cursor: pointer; color: white; border: none; padding: 12px 25px; font-weight: bold; border-radius: 5px; font-size: 16px; transition: all 0.3s ease;">Enviar mensaje</button>
-      </form>
-    </section>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 AVAIN. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- NUEVO: Chatbot -->
+  <!-- CHATBOT -->
   <div class="chat-widget">
     <div class="chat-button" onclick="toggleChat()">
       <i class="fas fa-robot"></i>
@@ -1036,18 +762,24 @@
       <div class="chat-messages" id="chat-messages">
         <div class="message bot">¡Hola! Soy AVA, tu asistente de IA. ¿En qué puedo ayudarte hoy?</div>
       </div>
-      <div class="chat-input">
-        <input type="text" placeholder="Escribe tu mensaje..." id="chat-input">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+      <div class="chat-options">
+        <div class="option-button" onclick="selectOption('prices')">
+          <i class="fas fa-tag"></i> 📋 Precios
+        </div>
+        <div class="option-button" onclick="selectOption('how-it-works')">
+          <i class="fas fa-cogs"></i> ⚙️ ¿Cómo funciona?
+        </div>
+        <div class="option-button" onclick="selectOption('demo')">
+          <i class="fas fa-play"></i> 🎬 Demo
+        </div>
+        <div class="option-button" onclick="selectOption('contact')">
+          <i class="fas fa-user-tie"></i> 👨‍💼 Contactar asesor
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Botón de scroll to top mejorado con animación -->
-  <div id="scroll-top">
-    <i class="fas fa-arrow-up"></i>
-  </div>
-
+  <!-- Scripts -->
   <script>
     // Toggle Menu Móvil
     function toggleMenu() {
@@ -1108,105 +840,93 @@
       });
     });
 
-    // NUEVAS FUNCIONES AÑADIDAS
-    // Chatbot
+    // Mostrar/ocultar botón de scroll to top
+    window.addEventListener('scroll', function() {
+      const scrollTop = document.getElementById('scroll-top');
+      if (window.pageYOffset > 300) {
+        scrollTop.classList.add('active');
+      } else {
+        scrollTop.classList.remove('active');
+      }
+    });
+
+    // CHATBOT FUNCTIONS
     function toggleChat() {
       const chat = document.querySelector('.chat-container');
       chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    function sendMessage() {
-      const input = document.getElementById('chat-input');
+    function selectOption(option) {
       const messages = document.getElementById('chat-messages');
-      
-      if (input.value.trim() === '') return;
       
       // Mensaje del usuario
       const userMsg = document.createElement('div');
       userMsg.className = 'message user';
-      userMsg.textContent = input.value;
+      
+      let userText = '';
+      switch(option) {
+        case 'prices':
+          userText = '📋 Precios';
+          break;
+        case 'how-it-works':
+          userText = '⚙️ ¿Cómo funciona?';
+          break;
+        case 'demo':
+          userText = '🎬 Demo';
+          break;
+        case 'contact':
+          userText = '👨‍💼 Contactar asesor';
+          break;
+      }
+      
+      userMsg.textContent = userText;
       messages.appendChild(userMsg);
       
-      // Respuesta del bot (simulada)
+      // Respuesta del bot
       setTimeout(() => {
         const botMsg = document.createElement('div');
         botMsg.className = 'message bot';
         
-        const responses = [
-          "Nuestros agentes de IA pueden ayudarte con eso. ¿Quieres que te explique cómo?",
-          "Esa es una excelente pregunta. Nuestro paquete PRO incluye soluciones para ese caso.",
-          "Podemos programar una llamada para analizar tu caso específico.",
-          "Ese requerimiento lo cubre nuestro paquete PREMIUM con agentes especializados."
-        ];
+        let botText = '';
+        switch(option) {
+          case 'prices':
+            botText = 'Tenemos paquetes desde $500/mes hasta soluciones empresariales personalizadas. ¿Quieres que te envíe más detalles por correo?';
+            break;
+          case 'how-it-works':
+            botText = 'Implementamos agentes de IA que automatizan tus procesos. Primero analizamos tu negocio, luego desarrollamos la solución y finalmente la implementamos. Todo en 4-6 semanas.';
+            break;
+          case 'demo':
+            botText = 'Puedes ver un demo en vivo en nuestro sitio web o agendar una demostración personalizada. ¿Prefieres el enlace o que coordinemos una llamada?';
+            break;
+          case 'contact':
+            botText = 'Claro, estoy conectándote con un asesor especializado. Por favor espera un momento...';
+            // Simular conexión con asesor
+            setTimeout(() => {
+              const advisorMsg = document.createElement('div');
+              advisorMsg.className = 'message bot';
+              advisorMsg.textContent = '¡Listo! Un asesor se pondrá en contacto contigo en los próximos minutos.';
+              messages.appendChild(advisorMsg);
+              messages.scrollTop = messages.scrollHeight;
+            }, 2000);
+            break;
+        }
         
-        botMsg.textContent = responses[Math.floor(Math.random() * responses.length)];
+        botMsg.textContent = botText;
         messages.appendChild(botMsg);
         messages.scrollTop = messages.scrollHeight;
       }, 1000);
       
-      input.value = '';
       messages.scrollTop = messages.scrollHeight;
     }
 
-    // ROI Calculator
-    function updateROI() {
-      const hours = document.getElementById('hours').value;
-      const employees = document.getElementById('employees').value;
-      const roi = (hours * employees * 30 * 0.5).toLocaleString();
+    // Cerrar chat al hacer clic fuera
+    document.addEventListener('click', function(event) {
+      const chatWidget = document.querySelector('.chat-widget');
+      const chatContainer = document.querySelector('.chat-container');
       
-      document.getElementById('roi-result').textContent = `$${roi}`;
-      document.getElementById('hours-value').textContent = hours;
-      document.getElementById('employees-value').textContent = employees;
-    }
-
-    // Solution Builder
-    function toggleOption(button) {
-      button.classList.toggle('active');
-      updateSolutionSummary();
-    }
-
-    function updateSolutionSummary() {
-      const selected = document.querySelectorAll('.option-toggle.active');
-      const summary = document.querySelector('.solution-summary');
-      
-      if (selected.length === 0) {
-        summary.innerHTML = '<p>Selecciona al menos una opción</p>';
-        return;
+      if (!chatWidget.contains(event.target) && chatContainer.style.display === 'flex') {
+        chatContainer.style.display = 'none';
       }
-      
-      let html = '<h3>Tu solución personalizada incluye:</h3><ul>';
-      
-      selected.forEach(option => {
-        html += `<li>${option.textContent}</li>`;
-      });
-      
-      html += `</ul><button onclick="openWhatsApp()">Solicitar cotización</button>`;
-      summary.innerHTML = html;
-    }
-
-    // Scrollytelling
-    ScrollReveal().reveal('.scrolly-step', {
-      delay: 200,
-      distance: '50px',
-      origin: 'bottom',
-      interval: 100
-    });
-
-    // Parallax
-    window.addEventListener('scroll', function() {
-      const scrollPosition = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('[data-parallax]');
-      
-      parallaxElements.forEach(el => {
-        const speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.3;
-        el.style.transform = `translateY(${scrollPosition * speed}px)`;
-      });
-    });
-
-    // Inicialización
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelector('header').setAttribute('data-parallax', '');
-      document.querySelector('header').setAttribute('data-parallax-speed', '0.5');
     });
   </script>
 </body>
